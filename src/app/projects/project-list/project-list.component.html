@@ -1,0 +1,88 @@
+<div class="flex">
+    <div class="bg-primary h-screen w-16rem flex-shrink-0">
+      <div class="w-full h-4rem px-4 flex align-items-center">
+        <img src="../../../assets/img/logo-inverse.svg"/>
+      </div>
+      <div class="sideMenu px-4 py-5">
+        <p-panelMenu [transitionOptions]="'10ms'" [model]="items"></p-panelMenu>
+      </div>
+    </div>
+    <div class="mainContent flex flex-grow-1 flex-column">
+  
+      <nav class="bg-white border-1 border-solid border-200 h-4rem px-4 flex align-items-center justify-content-between sticky top-0 w-full">
+        <div class="navbar-left flex align-items-center gap-2">
+          <a class="m-0 font-medium text-color">Project</a>
+          <i class="ri-arrow-right-s-line text-color text-lg"></i>
+          <a class="m-0 font-medium text-color-secondary">Project List</a>
+        </div>
+        <div class="navbar-right">
+        </div>
+      </nav>
+      <div class="bg-white border-none border-bottom-1 border-solid border-200 px-4 flex align-items-center justify-content-between">
+        <div class="flex align-items-center gap-1">
+          <p-dropdown [options]="clients"  optionLabel="name" optionValue="code" class="send-methods mr-6 hidden md:flex" dataKey="code" styleClass="text-sm siteSwitcherDropdown"></p-dropdown>
+          <p-dropdown [options]="progress" optionLabel="name" optionValue="code" class="send-methods mr-6 hidden md:flex" dataKey="code" styleClass="text-sm siteSwitcherDropdown"></p-dropdown>
+        </div>
+        <div class="flex align-items-center gap-2 py-2">
+          <button pButton icon="pi pi-plus-circle" type="button" label="New Project" class="p-button-text p-button-sm" styleClass="p-button-sm"></button>
+        </div>
+      </div>
+
+      <div class="contentArea flex flex-column surface-50 p-4 flex-grow-1">
+        <div class="flex-grow-1">
+            <div class="grid h-full m-0">
+                <div class="col-12 lg:h-full">
+                    
+                  <p-dataView [value]="product">
+                    <ng-template let-product pTemplate="listItem">
+                        <div class="w-full p-4 bg-white flex border-round-sm mb-2">
+
+                          <div class="flex-grow-1 flex align-items-center">
+                            <p-avatar
+                                image="./../../assets/img/company-avatar-default.png"
+                                size="large"
+                                shape="circle"
+                            ></p-avatar>
+                            <p class="my-0 ml-3">
+                              Project Zest
+                            </p>
+                          </div>
+                          <div class="flex-grow-1 flex flex-column">
+                            <p class="my-0 ml-3">
+                              Dialogg
+                            </p>
+                            <p class="my-0 ml-3 text-sm text-color-secondary">
+                              Client
+                            </p>
+                          </div>
+                          <div class="flex-grow-1 flex flex-column">
+                            <p class="my-0 ml-3">
+                              June 2022 - June 2023
+                            </p>
+                            <p class="my-0 ml-3 text-sm text-color-secondary">
+                              Project period
+                            </p>
+                          </div>
+                          <div class="flex-grow-1 flex flex-column">
+                            <p class="my-0 ml-3">
+                              15th June 2023
+                            </p>
+                            <p class="my-0 ml-3 text-sm text-color-secondary">
+                              Completion date
+                            </p>
+                          </div>
+                          <div class="flex-grow-1 flex">
+                            <p-tag styleClass="p-mr-2 text-sm bg-green-100 text-green-500 font-normal px-3" value="Preliminary"></p-tag>
+                          </div>
+
+                        </div>
+                    </ng-template>
+                </p-dataView>
+
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

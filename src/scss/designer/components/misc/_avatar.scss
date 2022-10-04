@@ -1,0 +1,32 @@
+.p-avatar {
+    background-color: $avatarBg;
+    border-radius: $borderRadius;
+    color:$avatarTextColor;
+
+    &.p-avatar-lg {
+        width: 2rem;
+        height: 2rem;
+        font-size: .875rem;
+        font-weight:700;
+
+        .p-avatar-icon {
+            font-size: .875rem;
+        }
+    }
+
+    &.p-avatar-xl {
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.25rem;
+
+        .p-avatar-icon {
+            font-size: 1.25rem;
+        }
+    }
+}
+
+.p-avatar-group {
+    .p-avatar {
+        border: 2px solid $panelContentBg;
+    }
+}

@@ -1,0 +1,36 @@
+<div class="grid h-screen w-screen mx-0 my-0 relative loginView">
+    <div class="w-screen px-4 fixed h-4rem flex align-items-center">
+        <img src="../../../../assets/img/logo-inverse.svg" class="h-2rem w-auto hidden xl:flex" />
+    </div>
+    <div class="hidden lg:flex bg-no-repeat bg-cover bg-center xl:col-5" style="background-image: url('../../../../assets/img/onboarding-banner.svg');"></div>
+    <div class="col-12 xl:col-7 surface-100 flex align-items-center justify-content-center">
+        <div class="p-8 flex flex-column align-items-center bg-white p-4 sm:w-full md:w-8 xxl:w-6">
+            <img src="../../../../assets/img/logo.svg" class="h-2rem w-auto xl:hidden mb-6" />
+            <p class="mt-0 mb-7 text-2xl font-semibold">Welcome Back!</p>
+            <div class="p-field flex flex-column w-full mb-6">
+                <label class="mb-2">Email</label>
+                <input pInputText type="email" placeholder="Email" />
+            </div>
+            <div class="p-field flex flex-column w-full mb-6">
+                <label class="mb-2">Password <span class="text-red-500">*</span></label>
+                <p-password [toggleMask]="true" styleClass="w-full p-password p-inputwrapper p-input-icon-right" inputStyleClass="w-full" [feedback]="false"></p-password>
+            </div>
+            <div class="flex justify-content-between align-items-center align-self-start mb-6 w-full">
+                <div class="p-field-checkbox">
+                    <p-checkbox [(ngModel)]="checked" [binary]="true" inputId="binary" label="Remember Me"></p-checkbox>
+                </div>
+                <div>
+                    <a class="text-primary font-medium no-underline mt-0 mb-0">Forget Password?</a>
+                </div>
+            </div>
+            <div class="flex w-full mb-6">
+                <button class="w-full" pButton type="button" label="Login"></button>
+            </div>
+            <div>
+                <p class="my-0">
+                    Don’t have an account? <a class="text-primary font-medium no-underline">Sign up</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

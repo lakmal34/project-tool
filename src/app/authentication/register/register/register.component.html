@@ -1,0 +1,49 @@
+<div class="grid h-screen w-screen mx-0 my-0 relative registerView">
+    <div class="w-screen px-4 fixed h-4rem flex align-items-center">
+        <img src="../../../../assets/img/logo-inverse.svg" class="h-2rem w-auto hidden xl:flex" />
+    </div>
+    <div class="hidden lg:flex bg-no-repeat bg-cover bg-center xl:col-5" style="background-image: url('../../../../assets/img/onboarding-banner.svg');"></div>
+    <div class="col-12 xl:col-7 surface-100 flex align-items-center justify-content-center">
+        <div class="p-8 flex flex-column align-items-center bg-white p-4 sm:w-full md:w-8 xxl:w-6">
+            <img src="../../../../assets/img/logo.svg" class="h-2rem w-auto xl:hidden mb-6" />
+            <p class="mt-0 mb-7 text-2xl font-semibold">Create your account</p>
+            <div class="p-field flex flex-column w-full mb-1">
+                <label class="mb-2">Name <span class="text-red-500">*</span></label>
+                <input pInputText type="text" placeholder="Enter name" />
+            </div>
+            <div class="align-self-start flex align-items-center justify-content-center mb-6">
+                <div class="p-field-checkbox">
+                    <p-checkbox [(ngModel)]="checked" [binary]="true" inputId="binary" label="Use as the company name"></p-checkbox>
+                </div>
+            </div>
+            <div class="p-field flex flex-column w-full mb-6">
+                <label class="mb-2">Company Name <span class="text-red-500">*</span></label>
+                <input pInputText type="text" placeholder="Company name" />
+            </div>
+            <div class="p-field flex flex-column w-full mb-6">
+                <label class="mb-2">Email <span class="text-red-500">*</span></label>
+                <input pInputText type="email" placeholder="Email" />
+            </div>
+            <div class="p-field flex flex-column w-full mb-6">
+                <label class="mb-2">Password <span class="text-red-500">*</span></label>
+                <p-password [toggleMask]="true" styleClass="w-full p-password p-inputwrapper p-input-icon-right" promptLabel=" " inputStyleClass="w-full" appendTo="passwordStrengthContainer" >
+                </p-password>
+                <div class="passwordStrengthContainer" id="passwordStrengthContainer">
+                </div>
+            </div>
+            <div class="align-self-start mb-6">
+                <p class="text-sm text-color-secondary m-0">
+                    By signing up, I accept the <a class="font-bold text-color">Terms of Service</a> and <a class="font-bold text-color">Privacy Policy</a>.
+                </p>
+            </div>
+            <div class="flex w-full mb-6">
+                <button class="w-full" pButton type="button" label="Signup"></button>
+            </div>
+            <div>
+                <p class="my-0">
+                    Already have an account? <a class="text-primary font-medium no-underline">Login</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

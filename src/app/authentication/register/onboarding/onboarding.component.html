@@ -1,0 +1,116 @@
+<div class="grid h-screen w-screen mx-0 my-0 relative onboardingView">
+    <div class="w-screen px-4 fixed h-4rem flex align-items-center">
+        <img src="../../../../assets/img/logo.svg" class="h-2rem w-auto" />
+    </div>
+    <div class="col-12 surface-50 flex align-items-center justify-content-center">
+
+        <div class="p-8 flex-column align-items-center p-4 text-center step-1" [ngClass]="{hidden: !step1, flex: step1}">
+            <div class="flex align-items-center justify-content-center mb-4">
+                <p class="my-0 text-6xl">Welcome <span class="font-bold text-primary">John Doe,</span></p>
+                <div class="flex-shrink-0 ml-3 hidden lg:flex">
+                    <img src="../../../../assets/img/firework.png" class="w-3rem h-auto flex-shrink-0"/>
+                </div>
+            </div>
+            
+            <p class="text-color-secondary text-2xl my-0">
+                Complete these steps and get the full experience without any restrictions
+            </p>
+            <div class="flex mt-8 w-full lg:w-20rem">
+                <button class="w-full" pButton type="button" label="Get Started" (click)="step1 = !step1; step2 = !step2;"></button>
+            </div>
+        </div>
+
+        <div class="p-8 flex-column align-items-center p-4 text-center step-2" [ngClass]="{flex: !step2, hidden: step2}">
+            <div class="flex align-items-center justify-content-center mb-4">
+                <p class="mt-0 mb-7 text-2xl font-semibold">What is your company type?</p>
+            </div>
+            <div class="flex">
+                <p-selectButton [options]="companyType" [(ngModel)]="value3" class="onboarding-selectButton">
+                    <ng-template let-item>
+                        <div class="flex flex-column align-items-center justify-content-center py-6 w-15rem">
+                            <div class="w-4rem h-4rem bg-no-repeat bg-cover bg-center selectButtonIcon" style="background-image:url({{item.img}});"></div>
+                            <div class="w-4rem h-4rem bg-no-repeat bg-cover bg-center selectButtonIconActive" style="background-image:url({{item.imgActive}});"></div>
+                            <p class="mt-3 mb-0 font-semibold">{{item.text}}</p>
+                        </div>
+                    </ng-template>
+                </p-selectButton>
+            </div>
+            <div class="flex mt-8 w-full lg:w-20rem">
+                <button class="w-full" pButton type="button" label="Continue" (click)="step2 = !step2; step3 = !step3;"></button>
+            </div>
+        </div>
+
+        <div class="p-8 flex-column align-items-center p-4 text-center step-3" [ngClass]="{flex: !step3, hidden: step3}">
+            <div class="flex align-items-center justify-content-center mb-4">
+                <p class="mt-0 mb-7 text-2xl font-semibold">Choose company avatar?</p>
+            </div>
+            <div class="flex relative">
+                <p-avatar
+                    label="JD"
+                    size="xlarge"
+                    shape="circle"
+                    styleClass="w-12rem h-12rem text-8xl border-8 border-solid border-gray-200 bg-primary"
+                ></p-avatar>
+                <button pButton type="button" icon="pi pi-pencil" class="p-button-raised p-button-rounded bg-white text-primary hover:bg-primary hover:text-white hover:border-none border-none p-button-sm absolute right-0 text-xl" style="bottom:16px;"></button>
+            </div>
+
+            <div class="flex mt-8 w-full lg:w-20rem">
+                <button class="w-full" pButton type="button" label="Continue" (click)="step3 = !step3; step4 = !step4;"></button>
+            </div>
+        </div>
+
+        <div class="p-8 flex-column align-items-center p-4 text-center step-4" [ngClass]="{flex: !step4, hidden: step4}">
+            <div class="flex align-items-center justify-content-center mb-4">
+                <p class="mt-0 mb-7 text-2xl font-semibold">How large is your company?</p>
+            </div>
+            <div class="flex">
+                <p-selectButton [options]="companySize" [(ngModel)]="value3" class="onboarding-selectButton">
+                    <ng-template let-item>
+                        <div class="flex flex-column align-items-center justify-content-center">
+                            <p class="m-0 font-semibold">{{item.text}}</p>
+                        </div>
+                    </ng-template>
+                </p-selectButton>
+            </div>
+            <div class="flex mt-8 w-full lg:w-20rem gap-3">
+                <button pButton  type="button" label="Skip" class="p-button-text"></button>
+                <button class="w-full" pButton type="button" label="Continue" (click)="step4 = !step4; step5 = !step5;"></button>
+            </div>
+        </div>
+
+        <div class="p-8 flex-column align-items-center p-4 text-center step-5" [ngClass]="{flex: !step5, hidden: step5}">
+            <div class="flex align-items-center justify-content-center mb-4">
+                <p class="mt-0 mb-7 text-2xl font-semibold">What is your industry?</p>
+            </div>
+            <div class="flex w-full lg:w-40rem">
+                <p-selectButton [options]="companyDomain" [(ngModel)]="value3" class="onboarding-selectButton">
+                    <ng-template let-item>
+                        <div class="flex flex-column align-items-center justify-content-center">
+                            <p class="m-0 font-semibold">{{item.text}}</p>
+                        </div>
+                    </ng-template>
+                </p-selectButton>
+            </div>
+            <div class="flex mt-8 w-full lg:w-20rem">
+                <button class="w-full" pButton type="button" label="Continue" (click)="step5 = !step5; step6 = !step6;"></button>
+            </div>
+        </div>
+
+        <div class="p-8 flex-column align-items-center p-4 text-center step-1" [ngClass]="{hidden: !step6, flex: step6}">
+            <div class="flex align-items-center justify-content-center mb-4">
+                <p class="my-0 text-6xl">Great <span class="font-bold text-primary">John Doe,</span></p>
+                <div class="flex-shrink-0 ml-3 hidden lg:flex">
+                    <img src="../../../../assets/img/firework.png" class="w-3rem h-auto flex-shrink-0"/>
+                </div>
+            </div>
+            
+            <p class="text-color-secondary text-2xl my-0">
+                You can change anything you added before steps.
+            </p>
+            <div class="flex mt-8 w-full lg:w-20rem">
+                <button class="w-full" pButton type="button" label="Complete"></button>
+            </div>
+        </div>
+
+    </div>
+</div>
