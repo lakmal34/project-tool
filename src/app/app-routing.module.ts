@@ -95,7 +95,7 @@ const routes: Routes = [
   { path:'clientProfile', 
     component:ClientProfileComponent,
     data: {
-      breadcrumb: 'clientProfile'
+      breadcrumb: 'Client Profile'
     },
   },
   { path:'employeelist', 

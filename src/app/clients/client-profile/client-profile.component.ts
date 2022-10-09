@@ -34,7 +34,7 @@ export class ClientProfileComponent implements OnInit {
   constructor(private productService: ProductService) {
     this.companyProfile = [
       { text: 'Client Details', secondary:'General client details', value:'on', code:1 },
-      { text: 'Client Resources', secondary:'Client resource files',value:'2', code:2 }
+      { text: 'Client Users', secondary:'Client users',value:'2', code:2 }
     ];
    }
 

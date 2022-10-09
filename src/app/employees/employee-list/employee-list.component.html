@@ -2,23 +2,88 @@
     <app-sidemenu></app-sidemenu>
     <div class="mainContent flex flex-grow-1 flex-column">
   
-    <app-topnav></app-topnav>
+      <app-topnav></app-topnav>
+      <div class="bg-white border-none border-bottom-1 border-solid border-200 px-4 flex align-items-center justify-content-between">
+        <div class="flex align-items-center gap-1">
+          <p-dropdown [options]="clients"  optionLabel="name" optionValue="code" class="send-methods mr-6 hidden md:flex" dataKey="code" styleClass="text-sm siteSwitcherDropdown"></p-dropdown>
+          <p-dropdown [options]="progress" optionLabel="name" optionValue="code" class="send-methods mr-6 hidden md:flex" dataKey="code" styleClass="text-sm siteSwitcherDropdown"></p-dropdown>
+        </div>
+        <div class="flex align-items-center gap-2 py-2">
+          <button pButton icon="pi pi-plus-circle" type="button" label="New Employee" class="p-button-text p-button-sm" styleClass="p-button-sm" (click)="visibleSidebar2 = true"></button>
+        </div>
+      </div>
 
-      <div class="contentArea flex flex-column surface-50 p-6 flex-grow-1">
-        <div class="flex-grow-1 bg-white">
+      <div class="contentArea flex flex-column surface-50 p-4 flex-grow-1">
+        <div class="flex-grow-1">
             <div class="grid h-full m-0">
-                <div class="col-12 xl:col-3  border-none border-right-1 border-solid border-100 lg:h-full p-6">
-                    <div class="grid">
-                        <div class="col-12">
+                <div class="col-12 lg:h-full">
+                    
+                  <p-dataView [value]="product">
+                    <ng-template let-product pTemplate="listItem">
+                        <div class="w-full p-4 bg-white flex border-round-sm mb-2 cursor-pointer">
+
+                          <div class="col-6 p-0 flex align-items-center">
+                            <p-avatar
+                                label="AB"
+                                size="large"
+                                shape="circle"
+                            ></p-avatar>
+                            <p class="my-0 ml-3">
+                              {{product.user}}
+                            </p>
+                          </div>
+                          <div class="col-6 p-0  flex align-items-center">
+                            <p-tag styleClass="p-mr-2 text-sm bg-green-100 text-green-500 font-normal px-3" value="Preliminary"></p-tag>
+                          </div>
+
                         </div>
-                    </div>
-                </div>
-                <div class="col-12 xl:col-9 flex-column p-6">
-                    <div class="flex flex-column h-full bg-white">
-                    </div>
+                    </ng-template>
+                </p-dataView>
+
                 </div>
             </div>
         </div>
       </div>
     </div>
   </div>
+
+
+
+
+
+<p-sidebar [(visible)]="visibleSidebar2" position="right" [baseZIndex]="10000" class="flex flex-column lg:w-30rem" styleClass="flex flex-column flex-1 lg:w-30rem">
+  <div class="flex h-full flex-column">
+    <div class="w-full px-4 h-3rem flex align-items-center justify-content-between border-none border-bottom-1 border-200 border-solid sticky top-0">
+      <p class="mt-0 mb-0 font-medium">Add New Employee</p>
+    </div>
+    <div class="flex-grow-1 flex-column py-5 px-4">
+      <div class="p-field flex flex-column mb-3">
+        <label class="mb-2">Select Client</label>
+        <p-dropdown [options]="clients" [(ngModel)]="selectedSite" optionLabel="name" [showClear]="false" styleClass="w-full"></p-dropdown>
+      </div>
+      <div class="p-field  flex flex-column mb-3">
+        <label class="mb-2">Project Name</label>
+        <input type="text" pInputText styleClass="w-full">
+      </div>
+      <div class="p-field  flex flex-column mb-3">
+        <label class="mb-2">Project Description</label>
+        <textarea pInputTextarea></textarea>
+      </div>
+      <div class="p-field flex flex-column mb-3">
+        <label class="mb-2">Project Period</label>
+        <p-dropdown [options]="clients" [(ngModel)]="selectedSite" optionLabel="name" [showClear]="false" styleClass="w-full"></p-dropdown>
+      </div>
+      <div class="p-field flex flex-column mb-3">
+        <label class="mb-2">Completion Date</label>
+        <p-calendar inputId="basic" [(ngModel)]="date1" class="w-full" styleClass="w-full"></p-calendar>
+      </div>
+      <div class="p-field flex flex-column mb-3">
+        <label class="mb-2">Project Status</label>
+        <p-dropdown [options]="clients" [(ngModel)]="selectedSite" optionLabel="name" [showClear]="false" styleClass="w-full"></p-dropdown>
+      </div>
+    </div>
+    <div class="w-full px-4 py-3 flex border-none border-top-1 border-200 border-solid sticky bottom-0">
+        <p-button label="Add" styleClass="w-full" class="w-full"></p-button>
+    </div>
+  </div>
+</p-sidebar>
