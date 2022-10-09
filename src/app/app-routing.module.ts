@@ -9,17 +9,23 @@ import { VerifyPasswordComponent } from './authentication/login/verify-password/
 import { ResetPasswordComponent } from './authentication/login/reset-password/reset-password.component';
 import { CompanyProfileComponent } from './company/company-profile/company-profile.component';
 import { UserComponent } from './user/user/user.component';
+import { ProjectProfileComponent } from './projects/project-profile/project-profile.component';
+import { ClientsComponent } from './clients/clients.component';
+import { ClientProfileComponent } from './clients/client-profile/client-profile.component';
 
 const routes: Routes = [
   { path:'projectlist', component: ProjectListComponent},
   { path: 'register', component:RegisterComponent},
   { path:'onboarding', component:OnboardingComponent},
   { path:'login', component:LoginComponent},
-  { path:'forgotPassword', component:ForgotPasswordComponent},
-  { path:'verifyPassword', component:VerifyPasswordComponent},
-  { path:'resetPassword', component:ResetPasswordComponent},
-  { path:'companyProfile', component:CompanyProfileComponent},
-  { path:'users', component:UserComponent},
+  { path:'forgotpassword', component:ForgotPasswordComponent},
+  { path:'verifypassword', component:VerifyPasswordComponent},
+  { path:'resetpassword', component:ResetPasswordComponent},
+  { path:'companyprofile', component:CompanyProfileComponent},
+  { path:'userprofile', component:UserComponent},
+  { path:'projectProfile', component:ProjectProfileComponent},
+  { path:'clientlist', component:ClientsComponent},
+  { path:'clientProfile', component:ClientProfileComponent},
 ];
 
 @NgModule({

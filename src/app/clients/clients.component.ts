@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MenuItem} from 'primeng/api';
-import { Product } from '../../product';
-import { ProductService } from '../../productservice';
+import { Product } from '../product';
+import { ProductService } from '../productservice';
 
 interface clients {
   name: string,
@@ -14,12 +14,13 @@ interface progress {
   code: boolean
 }
 
+
 @Component({
-  selector: 'app-project-list',
-  templateUrl: './project-list.component.html',
-  styleUrls: ['./project-list.component.scss']
+  selector: 'app-clients',
+  templateUrl: './clients.component.html',
+  styleUrls: ['./clients.component.scss']
 })
-export class ProjectListComponent implements OnInit {
+export class ClientsComponent implements OnInit {
 
   items: MenuItem[];
   mobileItems: MenuItem[];
@@ -31,7 +32,8 @@ export class ProjectListComponent implements OnInit {
   selectedSite:clients[];
   date1: Date;
 
-  constructor(private productService: ProductService) {
+
+   constructor(private productService: ProductService) {
     this.clients = [
       {name: 'All Clients', short: 'All', code: false},
       {name: 'Dialog', short: 'DL', code: true},

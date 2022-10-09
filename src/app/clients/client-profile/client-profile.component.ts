@@ -11,11 +11,11 @@ interface CompanyProfile{
 }
 
 @Component({
-  selector: 'app-company-profile',
-  templateUrl: './company-profile.component.html',
-  styleUrls: ['./company-profile.component.scss']
+  selector: 'app-client-profile',
+  templateUrl: './client-profile.component.html',
+  styleUrls: ['./client-profile.component.scss']
 })
-export class CompanyProfileComponent implements OnInit {
+export class ClientProfileComponent implements OnInit {
 
   items: MenuItem[];
   mobileItems: MenuItem[];
@@ -32,8 +32,8 @@ export class CompanyProfileComponent implements OnInit {
 
   constructor(private productService: ProductService) {
     this.companyProfile = [
-      { text: 'Company Details', secondary:'General company details', value:'on', code:1 },
-      { text: 'Company Resources', secondary:'Company resource files',value:'2', code:2 }
+      { text: 'Client Details', secondary:'General client details', value:'on', code:1 },
+      { text: 'Client Resources', secondary:'Client resource files',value:'2', code:2 }
     ];
    }
 

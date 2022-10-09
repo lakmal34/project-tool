@@ -51,6 +51,10 @@ import { ResetPasswordComponent } from './authentication/login/reset-password/re
 import { CompanyProfileComponent } from './company/company-profile/company-profile.component';
 import {PanelMenuModule} from 'primeng/panelmenu';
 import { UserComponent } from './user/user/user.component';
+import { ProjectProfileComponent } from './projects/project-profile/project-profile.component';
+import { ClientsComponent } from './clients/clients.component';
+import { ClientProfileComponent } from './clients/client-profile/client-profile.component';
+
 
 @NgModule({
   declarations: [
@@ -64,6 +68,9 @@ import { UserComponent } from './user/user/user.component';
     ResetPasswordComponent,
     CompanyProfileComponent,
     UserComponent,
+    ProjectProfileComponent,
+    ClientsComponent,
+    ClientProfileComponent,
   ],
   imports: [
     BrowserModule,

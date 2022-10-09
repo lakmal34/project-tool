@@ -72,7 +72,12 @@ export class ProductService {
             quantity: this.generateQuantity(),
             category: "Product Category",
             inventoryStatus: this.generateStatus(),
-            rating: this.generateRating()
+            rating: this.generateRating(),
+            user:"Bethel Skiles",
+            useremail:"Bethal@internal.com",
+            usertype:"Internal",
+            usercompanyrole:"Accountant",
+            userprojectrole:"Level 2 - Seniors Consultant",
         };
 
         product.image = product.name.toLocaleLowerCase().split(/[ ,]+/).join('-')+".jpg";;

@@ -1,0 +1,715 @@
+<div class="flex">
+    <div class="bg-primary h-screen w-16rem flex-shrink-0">
+      <div class="w-full h-4rem px-4 flex align-items-center">
+        <img src="../../../assets/img/logo-inverse.svg"/>
+      </div>
+      <div class="sideMenu px-4 py-5">
+        <p-panelMenu [transitionOptions]="'10ms'" [model]="items"></p-panelMenu>
+      </div>
+    </div>
+    <div class="mainContent flex flex-grow-1 flex-column">
+  
+      <nav class="bg-white border-1 border-solid border-200 h-4rem px-4 flex align-items-center justify-content-between sticky top-0 w-full">
+        <div class="navbar-left flex align-items-center gap-2">
+          <a class="m-0 font-medium text-color">Project</a>
+          <i class="ri-arrow-right-s-line text-color text-lg"></i>
+          <a class="m-0 font-medium text-color-secondary">Profile</a>
+        </div>
+        <div class="navbar-right">
+        </div>
+      </nav>
+
+      <div class="contentArea flex flex-column surface-50 p-6 flex-grow-1">
+        <div class="flex-grow-1 bg-white border-1 border-100">
+            <div class="grid h-full m-0">
+                <div class="col-12 xl:col-3 border-none border-right-1 border-solid border-100 lg:h-full p-0">
+                    <div class="grid">
+                        <div class="col-12">
+                            <p-selectButton [options]="projectProfile" [(ngModel)]="value3" class="project-selectButton" optionValue="value" (onChange)="frqToggle($event)">
+                                <ng-template let-item>
+                                    <div class="flex flex-column align-items-start">
+                                        <p class="mt-0 mb-1 font-medium primary-line">{{item.text}}</p>
+                                        <p class="m-0 text-sm text-color-secondary secondary-line">{{item.secondary}}</p>
+                                    </div>
+                                </ng-template>
+                            </p-selectButton>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 xl:col-9 p-6  flex-column" [ngClass]="{hidden: !step1, flex: step1}">
+                    <div class="flex flex-column h-full">
+                        <div class="flex-grow-1">
+                            <div class="grid m-0">
+                                <div class="col-12">
+                                    <div class="flex align-items-center">
+                                        <p-avatar
+                                            image="./../../assets/img/company-avatar-default.png"
+                                            size="xlarge"
+                                            styleClass="w-5rem h-5rem text-xl bg-primary border-round-sm"
+                                        ></p-avatar>
+                                        <div class="ml-4">
+                                            <p class="mb-2 mt-0 text-xl text-color font-semibold">Miller Accountigs Pvt Ltd</p>
+                                            <p-tag severity="success">Preliminary</p-tag>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 xl:col-4 mb-4">
+                                    <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0">
+                                        <ng-template pTemplate="display" class="flex w-100 hover:bg-white p-0">
+                                            <p class="text-base font-medium mb-0 mt-0 text-color-secondary">Client</p>
+                                            <p class="text-base font-medium mb-0 mt-0 text-color">Grady, Kuhic and Sauer</p>
+                                        </ng-template>
+                                        <ng-template pTemplate="content" class="flex flex-column">
+                                            <label class="block mb-2">Select Client</label>
+                                            <p-dropdown [options]="clients" [(ngModel)]="selectedClient" optionLabel="name" class="w-full" styleClass="w-full"></p-dropdown>
+                                        </ng-template>
+                                    </p-inplace>
+                                </div>
+                                <div class="col-12 xl:col-4 mb-4">
+                                    <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0">
+                                        <ng-template pTemplate="display" class="flex w-100 hover:bg-white p-0">
+                                            <p class="text-base font-medium mb-0 mt-0 text-color-secondary">Project Name</p>
+                                            <p class="text-base font-medium mb-0 mt-0 text-color">Project Zest</p>
+                                        </ng-template>
+                                        <ng-template pTemplate="content" class="flex flex-column">
+                                            <label class="block mb-2">Project Name</label>
+                                            <input type="text" value="Project Zest" pInputText class="w-full">
+                                        </ng-template>
+                                    </p-inplace>
+                                </div>
+                            </div>
+                            <div class="grid m-0">
+                                <div class="col-12 xl:col-12 mb-4">
+                                    <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0">
+                                        <ng-template pTemplate="display" class="flex w-100 hover:bg-white p-0">
+                                            <p class="text-base font-medium mb-0 mt-0 text-color-secondary">Project Description</p>
+                                            <p class="text-base font-medium mb-0 mt-0 text-color">Financial management for the Investment to Zest project </p>
+                                        </ng-template>
+                                        <ng-template pTemplate="content" class="flex flex-column">
+                                            <label class="block mb-2">Project Description</label>
+                                            <textarea pInputTextarea class="w-full"></textarea>
+                                        </ng-template>
+                                    </p-inplace>
+                                </div>
+                            </div>
+                            <div class="grid m-0">
+                                <div class="col-12 xl:col-4 mb-4">
+                                    <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0">
+                                        <ng-template pTemplate="display" class="flex w-100 hover:bg-white p-0">
+                                            <p class="text-base font-medium mb-0 mt-0 text-color-secondary">Project Period</p>
+                                            <p class="text-base font-medium mb-0 mt-0 text-color">June 2022 - June 2023</p>
+                                        </ng-template>
+                                        <ng-template pTemplate="content" class="flex flex-column">
+                                            <label class="block mb-2">Project Period</label>
+                                            <p-calendar [(ngModel)]="dateValue" view="year" dateFormat="yy" class="w-full" styleClass="w-full"></p-calendar>
+                                        </ng-template>
+                                    </p-inplace>
+                                </div>
+                                <div class="col-12 xl:col-4 mb-4">
+                                    <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0">
+                                        <ng-template pTemplate="display" class="flex w-100 hover:bg-white p-0">
+                                            <p class="text-base font-medium mb-0 mt-0 text-color-secondary">Completion Date</p>
+                                            <p class="text-base font-medium mb-0 mt-0 text-color">15th June 2023</p>
+                                        </ng-template>
+                                        <ng-template pTemplate="content" class="flex flex-column">
+                                            <label class="block mb-2">Completion Date</label>
+                                            <p-calendar [(ngModel)]="dateValue" class="w-full" styleClass="w-full"></p-calendar>
+                                        </ng-template>
+                                    </p-inplace>
+                                </div>
+                                <div class="col-12 xl:col-4 mb-4">
+                                    <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0">
+                                        <ng-template pTemplate="display" class="flex w-100 hover:bg-white p-0">
+                                            <p class="text-base font-medium mb-0 mt-0 text-color-secondary">Project Status</p>
+                                            <p class="text-base font-medium mb-0 mt-0 text-color">Preliminary</p>
+                                        </ng-template>
+                                        <ng-template pTemplate="content" class="flex flex-column">
+                                            <label class="block mb-2">Project Status</label>
+                                            <p-dropdown [options]="projectStatus" [(ngModel)]="selectedProject" optionLabel="name" class="w-full" styleClass="w-full"></p-dropdown>
+                                        </ng-template>
+                                    </p-inplace>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <div class="grid m-0">
+                                <div class="col-12 py-0">
+                                    <button pButton pRipple type="button" label="Edit Details" class="p-button-outlined p-button-sm"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 xl:col-9 flex-column p-0" [ngClass]="{hidden: !step2, flex: step2}">
+                    <div class="flex flex-column h-full surface-50">
+                        <div class="flex-grow-1">
+                            <div class="grid m-0">
+                                <div class="col-12 h-4rem bg-white border-bottom-1 border-100 flex align-items-center justify-content-between px-5">
+                                    <div>
+                                        <p class="m-0 font-medium primary-line text-color">Users</p>
+                                    </div>
+                                    <div>
+                                        <button pButton icon="pi pi-plus-circle" type="button" label="New User" class="p-button-text" (click)="visibleSidebar3 = true"></button>
+                                    </div>
+                                </div>
+                                <div class="col-12 p-4">
+                                    <p-dataView [value]="product">
+                                        <ng-template let-product pTemplate="listItem">
+                                            <div class="w-full p-4 bg-white flex border-round-sm mb-2 cursor-pointer">
+                    
+                                              <div class="flex-grow-1 flex align-items-center">
+                                                <p-avatar
+                                                    image="./../../assets/img/company-avatar-default.png"
+                                                    size="large"
+                                                    shape="circle"
+                                                ></p-avatar>
+                                                <div class="flex-grow-1 flex flex-column">
+                                                    <p class="my-0 ml-3">
+                                                      {{product.user}}
+                                                    </p>
+                                                    <p class="my-0 ml-3 text-sm text-color-secondary">
+                                                        {{product.useremail}}
+                                                    </p>
+                                                  </div>
+                                              </div>
+                                              <div class="flex-grow-1 flex flex-column">
+                                                <p class="my-0 ml-3">
+                                                    {{product.usertype}}
+                                                </p>
+                                                <p class="my-0 ml-3 text-sm text-color-secondary">
+                                                  Type
+                                                </p>
+                                              </div>
+                                              <div class="flex-grow-1 flex flex-column">
+                                                <p class="my-0 ml-3">
+                                                    {{product.usercompanyrole}}
+                                                </p>
+                                                <p class="my-0 ml-3 text-sm text-color-secondary">
+                                                    Company position
+                                                </p>
+                                              </div>
+                                              <div class="flex-grow-1 flex flex-column">
+                                                <p class="my-0 ml-3">
+                                                    {{product.usercompanyrole}}
+                                                </p>
+                                                <p class="my-0 ml-3 text-sm text-color-secondary">
+                                                    Role
+                                                </p>
+                                              </div>
+                                            </div>
+                                        </ng-template>
+                                    </p-dataView>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 xl:col-9 flex-column p-0" [ngClass]="{hidden: !step3, flex: step3}">
+                    <div class="flex flex-column h-full">
+                        <div class="flex-grow-1">
+                            <div class="grid m-0">
+                                <div class="col-12 h-4rem bg-white border-bottom-1 border-100 flex align-items-center justify-content-between px-5">
+                                    <div>
+                                        <p class="m-0 font-medium primary-line text-color">Assign Tasks</p>
+                                    </div>
+                                    <div class="flex flex-row">
+                                        <button pButton icon="pi pi-plus-circle" type="button" label="New TASK" class="p-button-text" (click)="visibleSidebar2 = true"></button>
+                                        <div class="flex flex-column">
+                                            <p-dropdown [options]="clients" [(ngModel)]="selectedClient" optionLabel="name" class="w-full" styleClass="w-full"></p-dropdown>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 p-4">
+                                    <p-accordion>
+                                        <p-accordionTab header="Stage 1: Work Steps Monitoring" [selected]="true">
+                                            <p-dataView [value]="product">
+                                                <ng-template let-product pTemplate="listItem">
+                                                    <div class="w-full p-4 bg-white flex border-round-sm mb-2 cursor-pointer">
+                            
+                                                      <div class="flex-grow-1 flex align-items-center">
+                                                        <p-avatar
+                                                            image="./../../assets/img/company-avatar-default.png"
+                                                            size="large"
+                                                            shape="circle"
+                                                        ></p-avatar>
+                                                        <div class="flex-grow-1 flex flex-column">
+                                                            <p class="my-0 ml-3">
+                                                              {{product.user}}
+                                                            </p>
+                                                            <p class="my-0 ml-3 text-sm text-color-secondary">
+                                                                {{product.useremail}}
+                                                            </p>
+                                                          </div>
+                                                      </div>
+                                                      <div class="flex-grow-1 flex flex-column">
+                                                        <p class="my-0 ml-3">
+                                                            {{product.usertype}}
+                                                        </p>
+                                                        <p class="my-0 ml-3 text-sm text-color-secondary">
+                                                          Type
+                                                        </p>
+                                                      </div>
+                                                      <div class="flex-grow-1 flex flex-column">
+                                                        <p class="my-0 ml-3">
+                                                            {{product.usercompanyrole}}
+                                                        </p>
+                                                        <p class="my-0 ml-3 text-sm text-color-secondary">
+                                                            Company position
+                                                        </p>
+                                                      </div>
+                                                      <div class="flex-grow-1 flex flex-column">
+                                                        <p class="my-0 ml-3">
+                                                            {{product.usercompanyrole}}
+                                                        </p>
+                                                        <p class="my-0 ml-3 text-sm text-color-secondary">
+                                                            Role
+                                                        </p>
+                                                      </div>
+                                                    </div>
+                                                </ng-template>
+                                            </p-dataView>
+                                        </p-accordionTab>
+                                        <p-accordionTab header="Stage 2: Scope">
+                                            <p-dataView [value]="product">
+                                                <ng-template let-product pTemplate="listItem">
+                                                    <div class="w-full p-4 bg-white flex border-round-sm mb-2 cursor-pointer">
+                            
+                                                      <div class="flex-grow-1 flex align-items-center">
+                                                        <p-avatar
+                                                            image="./../../assets/img/company-avatar-default.png"
+                                                            size="large"
+                                                            shape="circle"
+                                                        ></p-avatar>
+                                                        <div class="flex-grow-1 flex flex-column">
+                                                            <p class="my-0 ml-3">
+                                                              {{product.user}}
+                                                            </p>
+                                                            <p class="my-0 ml-3 text-sm text-color-secondary">
+                                                                {{product.useremail}}
+                                                            </p>
+                                                          </div>
+                                                      </div>
+                                                      <div class="flex-grow-1 flex flex-column">
+                                                        <p class="my-0 ml-3">
+                                                            {{product.usertype}}
+                                                        </p>
+                                                        <p class="my-0 ml-3 text-sm text-color-secondary">
+                                                          Type
+                                                        </p>
+                                                      </div>
+                                                      <div class="flex-grow-1 flex flex-column">
+                                                        <p class="my-0 ml-3">
+                                                            {{product.usercompanyrole}}
+                                                        </p>
+                                                        <p class="my-0 ml-3 text-sm text-color-secondary">
+                                                            Company position
+                                                        </p>
+                                                      </div>
+                                                      <div class="flex-grow-1 flex flex-column">
+                                                        <p class="my-0 ml-3">
+                                                            {{product.usercompanyrole}}
+                                                        </p>
+                                                        <p class="my-0 ml-3 text-sm text-color-secondary">
+                                                            Role
+                                                        </p>
+                                                      </div>
+                                                    </div>
+                                                </ng-template>
+                                            </p-dataView>
+                                        </p-accordionTab>
+                                        <p-accordionTab header="Stage 3: Planning & Strategy">
+                                            <p-dataView [value]="product">
+                                                <ng-template let-product pTemplate="listItem">
+                                                    <div class="w-full p-4 bg-white flex border-round-sm mb-2 cursor-pointer">
+                            
+                                                      <div class="flex-grow-1 flex align-items-center">
+                                                        <p-avatar
+                                                            image="./../../assets/img/company-avatar-default.png"
+                                                            size="large"
+                                                            shape="circle"
+                                                        ></p-avatar>
+                                                        <div class="flex-grow-1 flex flex-column">
+                                                            <p class="my-0 ml-3">
+                                                              {{product.user}}
+                                                            </p>
+                                                            <p class="my-0 ml-3 text-sm text-color-secondary">
+                                                                {{product.useremail}}
+                                                            </p>
+                                                          </div>
+                                                      </div>
+                                                      <div class="flex-grow-1 flex flex-column">
+                                                        <p class="my-0 ml-3">
+                                                            {{product.usertype}}
+                                                        </p>
+                                                        <p class="my-0 ml-3 text-sm text-color-secondary">
+                                                          Type
+                                                        </p>
+                                                      </div>
+                                                      <div class="flex-grow-1 flex flex-column">
+                                                        <p class="my-0 ml-3">
+                                                            {{product.usercompanyrole}}
+                                                        </p>
+                                                        <p class="my-0 ml-3 text-sm text-color-secondary">
+                                                            Company position
+                                                        </p>
+                                                      </div>
+                                                      <div class="flex-grow-1 flex flex-column">
+                                                        <p class="my-0 ml-3">
+                                                            {{product.usercompanyrole}}
+                                                        </p>
+                                                        <p class="my-0 ml-3 text-sm text-color-secondary">
+                                                            Role
+                                                        </p>
+                                                      </div>
+                                                    </div>
+                                                </ng-template>
+                                            </p-dataView>
+                                        </p-accordionTab>
+                                        <p-accordionTab header="Stage 4: Risk Assessment">
+                                            <p-dataView [value]="product">
+                                                <ng-template let-product pTemplate="listItem">
+                                                    <div class="w-full p-4 bg-white flex border-round-sm mb-2 cursor-pointer">
+                            
+                                                      <div class="flex-grow-1 flex align-items-center">
+                                                        <p-avatar
+                                                            image="./../../assets/img/company-avatar-default.png"
+                                                            size="large"
+                                                            shape="circle"
+                                                        ></p-avatar>
+                                                        <div class="flex-grow-1 flex flex-column">
+                                                            <p class="my-0 ml-3">
+                                                              {{product.user}}
+                                                            </p>
+                                                            <p class="my-0 ml-3 text-sm text-color-secondary">
+                                                                {{product.useremail}}
+                                                            </p>
+                                                          </div>
+                                                      </div>
+                                                      <div class="flex-grow-1 flex flex-column">
+                                                        <p class="my-0 ml-3">
+                                                            {{product.usertype}}
+                                                        </p>
+                                                        <p class="my-0 ml-3 text-sm text-color-secondary">
+                                                          Type
+                                                        </p>
+                                                      </div>
+                                                      <div class="flex-grow-1 flex flex-column">
+                                                        <p class="my-0 ml-3">
+                                                            {{product.usercompanyrole}}
+                                                        </p>
+                                                        <p class="my-0 ml-3 text-sm text-color-secondary">
+                                                            Company position
+                                                        </p>
+                                                      </div>
+                                                      <div class="flex-grow-1 flex flex-column">
+                                                        <p class="my-0 ml-3">
+                                                            {{product.usercompanyrole}}
+                                                        </p>
+                                                        <p class="my-0 ml-3 text-sm text-color-secondary">
+                                                            Role
+                                                        </p>
+                                                      </div>
+                                                    </div>
+                                                </ng-template>
+                                            </p-dataView>
+                                        </p-accordionTab>
+                                    </p-accordion>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="flex-shrink-0">
+                            <div class="grid m-0 bg-white">
+                                <div class="col-12 p-4">
+                                    <button pButton pRipple type="button" label="Edit Details" class="p-button-outlined p-button-sm"></button>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="col-12 xl:col-9 flex-column p-0 overflow-x-scroll" [ngClass]="{hidden: !step4, flex: step4}">
+                    <div class="flex flex-column h-full bg-white">
+                        
+                        <div class="grid m-0">
+                            <div class="col-12 h-4rem bg-white border-bottom-1 border-100 flex align-items-center justify-content-between px-5">
+                                <div>
+                                    <p class="m-0 font-medium primary-line text-color">Task Boards</p>
+                                </div>
+                                <div>
+                                    <button pButton icon="pi pi-upload" type="button" label="Upload" class="p-button-text"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1 p-4 surface-50">
+                            <div class="flex flex-row w-full h-full overflow-x-scroll gap-3">
+
+                                <div class="w-25rem bg-white h-full border-1 surface-border border-round-sm flex flex-column">
+                                    <div class="px-4 py-3 border-bottom-1 surface-border">
+                                        <p class="m-0 text-dark font-medium">Open</p>
+                                    </div>
+                                    <div class="px-4 py-3 surface-50 flex-grow-1">
+                                        <p-dataView [value]="product">
+                                            <ng-template let-product pTemplate="listItem">
+                                                <a class="w-full p-4 bg-white flex flex-column border-round-sm mb-2 cursor-pointer border-bottom-8 border-blue-500" (click)="visibleSidebar4 = true">
+                                                    <p class="mb-2 text-color font-medium">
+                                                        {{product.description}}
+                                                    </p>
+                                                    <p-tag styleClass="mb-2 text-sm bg-green-100 text-green-500 font-normal px-3" value="Preliminary"></p-tag>
+                                                    <div class="flex align-items-center justify-content-between">
+                                                        <div class="flex align-items-center">
+                                                            <p-avatar
+                                                                image="./../../assets/img/company-avatar-default.png"
+                                                                shape="circle"
+                                                            ></p-avatar>
+                                                            <div class="flex-grow-1 flex flex-column">
+                                                                <p class="my-0 ml-3">
+                                                                {{product.user}}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <p-tag styleClass="p-mr-2 text-sm bg-red-100 text-red-500 font-normal px-3" icon="pi pi-calendar" value="27 Apr 2018"></p-tag>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </ng-template>
+                                        </p-dataView>
+                                    </div>
+                                </div>
+
+                                <div class="w-25rem bg-white h-full border-1 surface-border border-round-sm flex flex-column">
+                                    <div class="px-4 py-3 border-bottom-1 surface-border">
+                                        <p class="m-0 text-dark font-medium">Inprogress</p>
+                                    </div>
+                                    <div class="px-4 py-3 surface-50 flex-grow-1">
+                                        <p-dataView [value]="product">
+                                            <ng-template let-product pTemplate="listItem">
+                                                <div class="w-full p-4 bg-white flex flex-column border-round-sm mb-2 cursor-pointer border-bottom-8 border-blue-500">
+                                                    <p class="mb-2 text-color font-medium">
+                                                        {{product.description}}
+                                                    </p>
+                                                    <p-tag styleClass="mb-2 text-sm bg-green-100 text-green-500 font-normal px-3" value="Preliminary"></p-tag>
+                                                    <div class="flex align-items-center justify-content-between">
+                                                        <div class="flex align-items-center">
+                                                            <p-avatar
+                                                                image="./../../assets/img/company-avatar-default.png"
+                                                                shape="circle"
+                                                            ></p-avatar>
+                                                            <div class="flex-grow-1 flex flex-column">
+                                                                <p class="my-0 ml-3">
+                                                                {{product.user}}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <p-tag styleClass="p-mr-2 text-sm bg-red-100 text-red-500 font-normal px-3" icon="pi pi-calendar" value="27 Apr 2018"></p-tag>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ng-template>
+                                        </p-dataView>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-12 xl:col-9 flex-column p-0" [ngClass]="{hidden: !step5, flex: step5}">
+                    <div class="flex flex-column h-full bg-white">
+                            <div class="grid m-0">
+                                <div class="col-12 h-4rem bg-white border-bottom-1 border-100 flex align-items-center justify-content-between px-5">
+                                    <div>
+                                        <p class="m-0 font-medium primary-line text-color">Project Resources</p>
+                                    </div>
+                                    <div>
+                                        <button pButton icon="pi pi-upload" type="button" label="Upload" class="p-button-text"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <div class="grid m-0">
+                                    <div class="col-12 p-4">
+                                        <p-table [value]="product" responsiveLayout="scroll">
+                                            <ng-template pTemplate="header">
+                                                <tr>
+                                                    <th>File Name</th>
+                                                    <th>Uploaded By</th>
+                                                    <th>Date Uploaded</th>
+                                                    <th></th>
+                                                </tr>
+                                            </ng-template>
+                                            <ng-template pTemplate="body" let-product>
+                                                <tr>
+                                                    <td>
+                                                        <div class="flex flex-column">
+                                                            <p class="text-dark mt-0 mb-1">Tech requirements.pdf</p>
+                                                            <p class="text-color-secondary m-0">200 KB</p>
+                                                        </div>
+                                                    </td>
+                                                    <td>Olivia Rhye</td>
+                                                    <td>Jan 4, 2022</td>
+                                                    <td><i class="pi pi-ellipsis-v"></i></td>
+                                                </tr>
+                                            </ng-template>
+                                        </p-table>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p-sidebar [(visible)]="visibleSidebar2" position="right" [baseZIndex]="10000" class="flex flex-column lg:w-30rem" styleClass="flex flex-column flex-1 lg:w-30rem">
+    <div class="flex h-full flex-column">
+      <div class="w-full bg-white px-4 h-5rem flex flex-column justify-content-center border-none border-bottom-1 border-200 border-solid sticky top-0 flex-shrink-0">
+        <p class="mt-0 mb-1 font-medium">Client Acceptance/ Continuance Completed</p>
+        <p-tag severity="info" styleClass="p-mr-2 text-sm font-normal px-3" value="Work Steps Monitoring"></p-tag>
+      </div>
+      <div class="flex-grow-1 flex-column py-5 px-4">
+        <div>
+            <p class="mt-0 mb-4 font-medium">Assign employee</p>
+            <div class="p-field flex flex-column mb-3">
+                <div class="flex align-items-center justify-content-between">
+                    <label class="mb-2">Select Client</label>
+                    <button pButton type="button" label="Edit Role" class="p-button-text p-button-sm"></button>
+                </div>
+                <div class="flex gap-2 my-2 flex-wrap">
+                    <div class="px-3 py-1 surface-100 border-round-lg">
+                        <p class="m-0 text-sm font-medium text-color white-space-nowrap">Level 2 - Seniors Consultant</p>
+                    </div>
+                    <div class="px-3 py-1 surface-100 border-round-lg">
+                        <p class="m-0 text-sm font-medium text-color white-space-nowrap">Level 5 - Team Leaders/ EQC Partners</p>
+                    </div>
+                </div>
+                <p-dropdown placeholder="Select Employee" [options]="employees" [(ngModel)]="selectedEmployee" optionLabel="name" [showClear]="false" styleClass="w-full"></p-dropdown>
+            </div>
+            <div class="p-field flex flex-column mb-3">
+                <div class="flex align-items-center justify-content-between">
+                    <label class="mb-2">Assign Task visibility</label>
+                    <button pButton type="button" label="Edit Role" class="p-button-text p-button-sm"></button>
+                </div>
+                <div class="flex gap-2 my-2 flex-wrap">
+                    <div class="px-3 py-1 surface-100 border-round-lg">
+                        <p class="m-0 text-sm font-medium text-color white-space-nowrap">Level 2 - Seniors Consultant</p>
+                    </div>
+                    <div class="px-3 py-1 surface-100 border-round-lg">
+                        <p class="m-0 text-sm font-medium text-color white-space-nowrap">Level 5 - Team Leaders/ EQC Partners</p>
+                    </div>
+                </div>
+                <p-dropdown placeholder="Select Employee" [options]="employees" [(ngModel)]="selectedEmployee" optionLabel="name" [showClear]="false" styleClass="w-full"></p-dropdown>
+            </div>
+            <div class="p-field flex flex-column mb-3">
+                <div class="flex align-items-center justify-content-between">
+                    <label class="mb-2">Notification receivers </label>
+                    <button pButton type="button" label="Edit Role" class="p-button-text p-button-sm"></button>
+                </div>
+                <div class="flex gap-2 my-2 flex-wrap">
+                    <div class="px-3 py-1 surface-100 border-round-lg">
+                        <p class="m-0 text-sm font-medium text-color white-space-nowrap">Level 2 - Seniors Consultant</p>
+                    </div>
+                    <div class="px-3 py-1 surface-100 border-round-lg">
+                        <p class="m-0 text-sm font-medium text-color white-space-nowrap">Level 5 - Team Leaders/ EQC Partners</p>
+                    </div>
+                </div>
+                <p-dropdown placeholder="Select Employee" [options]="employees" [(ngModel)]="selectedEmployee" optionLabel="name" [showClear]="false" styleClass="w-full"></p-dropdown>
+            </div>
+            <div class="p-field flex flex-column mb-3">
+                <label class="mb-2">Due Date</label>
+                <p-calendar inputId="basic" [(ngModel)]="date1" class="w-full" styleClass="w-full"></p-calendar>
+            </div>
+            <div class="p-field flex flex-column mb-3">
+                <label class="mb-2">Duration</label>
+                <p-calendar inputId="basic" [(ngModel)]="date1" class="w-full" styleClass="w-full"></p-calendar>
+            </div>
+            <div class="p-field  flex flex-column mb-3">
+                <label class="mb-2">Description</label>
+                <textarea pInputTextarea></textarea>
+            </div>
+        </div>
+      </div>
+      <div class="w-full px-4 py-3 flex border-none border-top-1 border-200 border-solid sticky bottom-0">
+          <p-button label="Add" styleClass="w-full" class="w-full"></p-button>
+      </div>
+    </div>
+  </p-sidebar>
+
+  <p-sidebar [(visible)]="visibleSidebar3" position="right" [baseZIndex]="10000" class="flex flex-column lg:w-30rem" styleClass="flex flex-column flex-1 lg:w-30rem">
+    <div class="flex h-full flex-column">
+      <div class="w-full px-4 h-3rem flex align-items-center justify-content-between border-none border-bottom-1 border-200 border-solid sticky top-0">
+        <p class="mt-0 mb-0 font-medium">Add New User</p>
+      </div>
+      <div class="flex-grow-1 flex-column py-5 px-4">
+        <div class="p-field flex flex-column mb-3">
+          <label class="mb-2">User Type</label>
+          <p-dropdown [options]="clients" [(ngModel)]="selectedSite" optionLabel="name" [showClear]="false" styleClass="w-full"></p-dropdown>
+        </div>
+        <div class="p-field flex flex-column mb-3">
+            <label class="mb-2">Select User</label>
+            <p-dropdown [options]="clients" [filter]="true" [(ngModel)]="selectedSite" optionLabel="name" [showClear]="false" styleClass="w-full"></p-dropdown>
+        </div>
+        <div class="p-field flex flex-column mb-3">
+            <label class="mb-2">Company job position</label>
+            <p-dropdown [options]="clients"[(ngModel)]="selectedSite" optionLabel="name" [showClear]="false" styleClass="w-full"></p-dropdown>
+        </div>
+        <div class="p-field flex flex-column mb-3">
+            <label class="mb-2">Select Role</label>
+            <p-dropdown [options]="clients"[(ngModel)]="selectedSite" optionLabel="name" [showClear]="false" styleClass="w-full"></p-dropdown>
+        </div>
+      </div>
+      <div class="w-full px-4 py-3 flex border-none border-top-1 border-200 border-solid sticky bottom-0">
+          <p-button label="Add" styleClass="w-full" class="w-full"></p-button>
+      </div>
+    </div>
+  </p-sidebar>
+
+  <p-sidebar [(visible)]="visibleSidebar4" position="right" [baseZIndex]="10000" class="flex flex-column lg:w-30rem" styleClass="flex flex-column flex-1 lg:w-30rem">
+    <div class="flex h-full flex-column">
+      <div class="w-full px-4 h-3rem flex align-items-center border-none border-bottom-1 border-200 border-solid sticky top-0">
+        <button pButton pRipple type="button" icon="pi pi-check-square" label="mark as complete" class="p-button-secondary p-button-text mr-2"></button>
+        <button pButton pRipple type="button" icon="pi pi-ellipsis-h" label="Actions" class="p-button-secondary p-button-text"></button>
+      </div>
+      <div class="flex-grow-1 flex-column py-5 px-4">
+        <p class="text-color m-0 text-lg font-semibold">
+            Client Acceptance/ Continuance Completed
+        </p>
+        <p-tag styleClass="mt-2 text-sm bg-green-100 text-green-500 font-normal px-3" value="Preliminary"></p-tag>
+        <div class="flex mt-5">
+            <div class="mr-5">
+                <p class="mt-0 mb-3 text-color-secondary">Assignee</p>
+                <div class="flex">
+                    <p-avatar
+                        image="./../../assets/img/company-avatar-default.png"
+                        shape="circle"
+                    ></p-avatar>
+                    <div class="flex-grow-1 flex flex-column">
+                        <p class="my-0 ml-3">
+                            Morgan Hamilton
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p class="mt-0 mb-3 text-color-secondary">DueDate</p>
+                <p-tag styleClass="p-mr-2 text-sm bg-red-100 text-red-500 font-normal px-3" icon="pi pi-calendar" value="27 Apr 2018"></p-tag>
+            </div>
+        </div>
+        <div class="mt-5">
+            <p class="m-0 text-color">Description</p>
+            <p class="mt-3 mb-0 text-color-secondary">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed nibh id ipsum venenatis porttitor eget vestibulum ante. Proin sed nibh in mauris porta imperdiet eget a elit. Morbi vehicula mi at fermentum accumsan.
+            </p>
+        </div>
+        <div class="mt-5">
+            <button pButton pRipple type="button" icon="pi pi-plus-circle" label="Upload your attachment" class="p-button-primary p-button-text mr-2"></button>
+        </div>
+      </div>
+      <div class="w-full px-4 py-3 flex border-none border-top-1 border-200 border-solid sticky bottom-0">
+          <p-button label="Add" styleClass="w-full" class="w-full"></p-button>
+      </div>
+    </div>
+  </p-sidebar>

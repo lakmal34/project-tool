@@ -81,11 +81,36 @@ $width-properties: size-map((
     'w-40rem':40rem,
 ), 'w');
 
+$border-scales:0px, 1px, 2px, 3px, 4px, 5px, 6px, 7px, 8px;
+
+$border-directions: (
+    '': 'border',
+    'top': 'border-top',
+    'right': 'border-right',
+    'left': 'border-left',
+    'bottom': 'border-bottom',
+    'x': ('border-left','border-right'),
+    'y': ('border-top','border-bottom')
+);
+
+$border-styles: (
+    'border-solid': solid,
+    'border-dashed': dashed,
+    'border-dotted': dotted,
+    'border-double': double
+);
+
+@include border-class('border', $border-directions, $border-scales);
+@include style-class('border-style', $border-styles, true);
+
 @include style-class('width', $width-properties, true);
 @include style-class('max-width', $max-width-properties, true);
 @include spacing-class('p', $padding-properties, $space-scales);
 @include spacing-class('m', $margin-properties, $space-scales, true, true, true);
 
+p,a,label{
+    font-family:$fontFamily;
+}
 
 .onboardingView{
     .onboarding-selectButton{
@@ -177,103 +202,16 @@ $width-properties: size-map((
             }
         }
     }
+}
 
-    // .menu-section{
-    //     padding:24px 16px 24px 16px;
-    //     @include styleclass('px-5, py-4');
-
-    //     p-panelmenu{
-    //         display: block;
-    //     }
-    //     p-tieredmenu{
-    //         display: none;
-    //     }
-
-    //     .p-panelmenu-header{
-    //         border: none;
-    //     }
-
-    //     .p-highlight{
-    //         .p-panelmenu-header-link{
-    //             background-color: transparent !important;
-    //             color: #fff;
-    //             border:none !important;
-    //             box-shadow: none !important;
-    //         }
-    //     }
-
-    //     .p-panelmenu-header-link{
-    //         flex-grow: 1 !important;
-    //         padding: 8px 12px 8px 12px;
-    //         background-color: transparent;
-    //         color: #fff;
-    //         border:none !important;
-    //         box-shadow: none !important;
-    //         border-radius: 4px !important;
-
-    //         &:hover{
-    //             @include styleclass('bg-primary-400');
-    //             color: #fff !important;
-    //             border:none !important;
-    //             box-shadow: none !important;
-    //         }
-    //     }
-
-    //     .p-menuitem-icon{
-    //         line-height: 24px;
-    //     }
-
-    //     .p-panelmenu-icon{
-    //         order:1 !important;
-    //         line-height: 24px;
-    //     }
-
-    //     .p-menuitem-text{
-    //         flex-grow: 1 !important;
-    //         font-weight: 400;
-    //         line-height: 24px;
-    //     }
-
-    //     .p-panelmenu-content{
-    //         background-color: transparent;
-    //         color: #fff;
-    //         border:none !important;
-    //         box-shadow: none !important;
-    //         padding-top: 8px !important;
-    //         padding-bottom: 8px !important;
-
-    //         .p-menuitem {
-    //             margin-bottom: 8px;
-    //         }
-
-    //         .p-menuitem-link{
-    //             padding-top: 8px;
-    //             padding-bottom: 8px;
-    //             padding-left: 40px;
-    //             border-radius: 4px !important;
-    //             .p-menuitem-icon{
-    //                 color: #fff !important;
-    //             }
-    //             .p-menuitem-text{
-    //                 color: #fff !important;
-    //             }
-    //             &:hover{
-    //                 @include styleclass('bg-primary-400');
-    //                 color: #fff !important;
-    //                 border:none !important;
-    //                 box-shadow: none !important;
-    //             }
-    //             &:focus{
-    //                 @include styleclass('bg-primary-400');
-    //                 color: #fff !important;
-    //                 border:none !important;
-    //                 box-shadow: none !important;
-    //             }
-    //         }
-            
-    //     }
-
-    // }
+.p-sidebar{
+    .p-sidebar-header{
+        @include styleclass('p-0 fixed top-0 w-3rem h-3rem right-0 flex align-items-center justify-content-center');
+        z-index:10000;
+    }
+    .p-sidebar-content{
+        @include styleclass('p-0 h-full')
+    }
 }
 
 
@@ -298,542 +236,58 @@ $width-properties: size-map((
     background-color: transparent !important;
 }
 
-/* check for changes in the avatar.scss file inside the components */
-/* there is a limitation in primeng avatar badge this is a fix for that*/
-.avatar-badge-1 {
-    overflow: visible !important;
-    .p-badge{
-        color: transparent;
-        width:8px;
-        min-width: 8px;
-        height: 8px;
-        bottom: 0px !important;
-        top: 24px !important;
-        right: 2px;
-        border:0.5px solid #fff;
-    }
-}
-
-*{
-    font-family: 'Inter';
-}
-a{
-    cursor: pointer;
-}
-
-
-/* Contact list item and contact active styles*/
-.contact-list-item{
-    &.contact-active{
-        background-color: $primaryTransparent;
-        .contact-name{
-            color:$primaryColor;
-            font-weight: 500;
-        }
-        .contact-message{
-            color:$textColor;
-        }
-    }
-    .contact-name{
-        color:$textSecondaryColor;
-    }
-    .contact-message{
-        color:$textSecondaryColor;
-    }
-}
-
-/* custome styles for filters overlaypanel */
-.filters-overlaypanel{
-    .p-overlaypanel-content{
-        padding: 0px 0px 0px 0px;
-        .p-tabview-nav{
-            width: 100%;
-            li{
-                width: 50%;
-                .p-tabview-nav-link{
-                    font-size: 14px;
+.project-selectButton{
+    .p-selectbutton{
+        @include styleclass('flex, flex-column, shadow-none');
+        .p-button{
+            @include styleclass('flex, gap-3, border-none, border-bottom-1, border-solid, border-100, text-color-secondary, shadow-none, border-noround, h-4rem');
+            .primary-line{
+                @include styleclass('text-color');
+            }
+            .secondary-line{
+                @include styleclass('font-normal');
+           }
+            &.p-highlight{
+                @include styleclass('text-primary, bg-primary-50, border-none, border-bottom-1, border-solid, border-100,');
+                .secondary-line{
+                     @include styleclass('font-normal');
+                }
+                .primary-line{
+                    @include styleclass('text-primary');
                 }
             }
         }
-        .p-tabview-nav-link{
-            padding: 8px 16px 8px 16px !important;
-            font-weight: 500 !important;
-            width: 100%;
-            text-align: center;
-            justify-content: center;
-        }
-        .p-highlight{
-            .p-tabview-nav-link{
-                color:$help !important;
-                border-color:$help !important;
-            }
-        }
-        .p-tabview-panels{
-            padding: 0px !important;
-        }
-        .filter-open{
-            background-color: $helpTransparent;
-            color:$help !important;
-        }
-        .filters-container{
-            .p-overlaypanel:before{
-                display: none !important;
-            }
-            .p-overlaypanel:after{
-                display: none !important;
-            }
-            .filter-checked{
-                background-color: $helpTransparent;
-                color:$help !important;
-            }
-        }
-    }
-}
-
-.top-nav{
-    .profile-menu-btn{
-        &:hover{
-            background-color: transparent !important;
-        }
-        &:focus{
-            box-shadow: none !important;
-        }
-    }
-    .company-menu-btn{
-        .p-button-label{
-            font-weight: 400 !important;
-            color: $textColor ;
-        }
-        &:hover{
-            background-color: transparent !important;
-        }
-        &:focus{
-            box-shadow: none !important;
-        }
     }
 }
 
 
-.repair-record{
-    .vehicle-name{
-        color: $shade600;
-    }
-    .p-togglebutton{
-        width:20px;
-        height: 20px;
-        padding: 0px 0px 0px 0px;
-        border-radius: 50%;
-        font-size: 12px;
-    }
-    &.repair-active{
-        background-color: $primaryTransparent;
-        .vehicle-name{
-            color: $primaryColor;
-        }
-    }
-}
+.p-tag {
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    @include styleclass('px-4, border-round-2xl');
 
-.customer-details{
-    .p-inplace-display{
-        display: flex !important;
-        flex-direction: column;
-        padding: 0px 0px 0px 0px !important;
+    &.p-tag-success {
+        @include styleclass('bg-green-50, text-green-600,');
+    }
 
-        &:hover{
-            background-color: transparent !important;
-        }
-        &:focus{
-            box-shadow: none !important;
-        }
+    &.p-tag-info {
+        @include styleclass('bg-blue-50, text-blue-600,');
     }
-}
 
-.expanding-repair-details{
-    .p-accordion-header-link{
-        border-width: 0px !important;
-        background-color: #fff !important;
-        padding:0px 0px 0px 0px !important;
-        font-weight: 400 !important;
-        &:focus{
-            box-shadow: none !important;
-        }
+    &.p-tag-warning {
+        @include styleclass('bg-orange-50, text-orange-600,');
     }
-    .p-accordion-content{
-        border-width: 0px !important;
-        padding:0px 0px 0px 0px !important;
-    }
-    .p-accordion-toggle-icon{
-        display: none !important;
-    }
-    .p-accordion{
-        flex: 1 1 0%;
-        .p-accordion-header-link{
-            flex: 1 1 0%;
-            width: 100%;
-        }
-    }
-}
 
-.outgoing-message{
-    // .send-options{
-    //     margin-left: 60px;
-    // }
-    .message-content{
-        flex-direction: row;
-        .message{
-            background-color:$highlightBg;
-            max-width: 50%;
-        }
-    }
-}
-
-.incoming-message{
-    align-items: end;
-    // .send-options{
-    //     margin-right: 60px;
-    // }
-    .message-content{
-        flex-direction: row-reverse;
-        .message{
-            background-color:$highlightBg;
-        }
-    }
-}
-
-.left-12rem{
-    left: 12rem;
-}
-
-/*font sizes and line heights*/
-.text-xs{
-    line-height: 16px;
-}
-.text-sm{
-    line-height: 20px;
-}
-.text-base{
-    line-height: 24px;
-}
-
-.word-break-all{
-    word-break: break-all;
-}
-
-// Kanban switch
-.toggle {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    width: 70px;
-    height: 32px;
-    border-radius: 30px;
-    border: 1px solid #e2e8f0;
-    &:after{
-        content: "";
-        position: absolute;
-        width: 50%;
-        border-radius: 16px;
-        background-color: #2565AE;
-        top: 1px;
-        left: 1px;
-        bottom: 1px;
-        transition: all 0.2s ease-out;
-        z-index: -1;
-    }
-    .left-icon{
-      transition: all 0.2s ease-out;
-    }
-    .right-icon{
-      transition: all 0.2s ease-out;
-    }
-  }
-  
-  
-  /* Checkbox checked effect */
-  .kanbaanView {
-    .toggle::after{
-        left: 33px;
-    }
-    .left-icon{
-        color: #1e293b;
-        transition: all 0.2s ease-out;
-    }
-    .right-icon{
-        color: #ffffff;
-        transition: all 0.2s ease-out;
-    }
-  }
-
-  .chatView {
-    .left-icon{
-        color: #ffffff;
-        transition: all 0.2s ease-out;
-    }
-    .right-icon{
-        color: #1e293b;
-        transition: all 0.2s ease-out;
-    }
-  }
-
-  .mso{
-    .p-sidebar-header{
-        display: none !important;
-    }
-    .p-sidebar-content{
-        padding-left: 0px !important;
-        padding-right: 0px !important;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        padding-bottom: 0px !important;
-    }
-  }
-
-/*template responsive classes */
-
-// .top-nav{
-//     width: calc( 100% - 4rem) !important;
-// }
-.message-area{
-    margin-left:0rem;
-    padding-top: 7.5rem;
-}
-.repair-details-bar{
-    width: calc( 100% - 4rem) !important;
-}
-.message-composer{
-    width: calc( 100% - 4rem) !important;
-}
-
-@media screen and (min-width: 768px){
-    // .top-nav{
-    //     width: calc( 100% - 6em) !important;
-    // }
-    .repair-details-bar{
-        width: calc( 100% - 6rem) !important;
-    }
-    .message-composer{
-        width: calc( 100% - 24em) !important;
-    }
-}
-
-@media screen and (min-width: 1200px){
-    // .top-nav{
-    //     width: calc( 100% - 14rem) !important;
-    // }
-    .message-area{
-        margin-left:17rem;
-        padding-top: 9rem;
-    }
-    .repair-details-bar{
-        width: calc( 100% - 31rem) !important;
-    }
-    .message-composer{
-        width: calc( 100% - 31rem) !important;
-    }
-}
-
-@media screen and (min-width: 1440px) {
-    // .top-nav{
-    //     width: calc( 100% - 17rem) !important;
-    // }
-    .repair-details-bar{
-        width: calc( 100% - 34rem) !important;
-    }
-    .message-composer{
-        width: calc( 100% - 34rem) !important;
-    }
-}
-
-
-.send-methods{
-    .p-dropdown{
-        @include styleclass('shadow-none, text-sm, border-0');
-        .p-dropdown-item{
-            @include styleclass('text-sm');
-        }
-    }
-    .p-inputtext{
-        @include styleclass('shadow-none, text-sm, border-0');
-    }
-    .p-dropdown-trigger{
-        @include styleclass('w-auto');
-        .pi-chevron-down{
-            @include styleclass('text-sm');
-        }
-    }
-}
-
-
-.text{
-    .email-composer-panel{
-        display: none;
-    }
-    .text-composer-panel{
-        display: flex;
-    }
-}
-
-.email{
-    .email-composer-panel{
-        display: flex;
-    }
-    .text-composer-panel{
-        display: none;
-    }
-}
-
-.chatView{
-    .main-sidebar-area{
-        display: flex;
-    }
-    .main-content-area{
-        display: flex;
-    }
-    .Kanbaan-container{
-        display: none;
-    }
-}
-
-.kanbaanView{
-    .main-sidebar-area{
-        display: none;
-    }
-    .main-content-area{
-        display: none;
-    }
-    .Kanbaan-container{
-        display: flex;
-        flex-direction: column;
-    }
-}
-
-// .chatView{
-//     .main-sidebar-area{
-//         display: none;
-//     }
-//     .main-content-area{
-//         display: none;
-//     }
-//     .Kanbaan-container{
-//         display: flex;
-//         flex-direction: column;
-//     }
-// }
-
-// .kanbaanView{
-//     .main-sidebar-area{
-//         display: flex;
-//     }
-//     .main-content-area{
-//         display: flex;
-//     }
-//     .Kanbaan-container{
-//         display: none;
+    &.p-tag-danger {
+        @include styleclass('bg-red-50, text-red-600');
         
-//     }
-// }
-
-.custom-tag{
-    @include styleclass('px-2 py-1 flex');
-    .tag-text{
-        @include styleclass('text-xs font-medium mt-0 mb-0');
-    }
-    &.blue-transparent{
-        @include styleclass('bg-primary-50');
-        .tag-text{
-            @include styleclass('text-blue-500');
-        }
-    }
-    &.indigo-transparent{
-        @include styleclass('bg-indigo-50');
-        .tag-text{
-            @include styleclass('text-indigo-500');
-        }
-    }
-    
-
-}
-
-.Kanbaan-container-inner{
-    height: calc(100% - 7.5rem);
-    .kanbaan-lane{
-        overflow-y: auto;
-        .p-dataview-content{
-            .p-col{
-                border-bottom: none !important;
-            }
-            
-        }
-    }
-}
-
-.attachment-overlay{
-    .p-overlaypanel-content{
-        padding: 0px 0px 0px 0px !important;
-    }
-    
-}
-
-.delayMessage-overlay{
-    .p-overlaypanel-content{
-        padding: 0px 0px 0px 0px !important;
-    }
-}
-
-.calendarpicker-preicon{
-    .p-inputtext{
-        @include styleclass('pl-8');
-    }
-}
-
-.moduleSelector-overlay{
-    .p-inputtext{
-        @include styleclass('pl-8');
     }
 }
 
 
-.siteSwitcherDropdown{
-    .p-dropdown-items{
-        p-dropdownitem{
-            &:first-child {
-                .p-dropdown-item{
-                    font-weight: bold;
-                }
-            }
-        }
-        p-dropdownitem{
-            &:not(:first-child) {
-                .p-dropdown-item{
-                    padding-left: 32px;
-                    padding-right: 32px;
-                }
-            }
-        }
-    }
+.p-accordion-header-link {
+    @include styleclass('bg-white,');
 }
-
-.kanbanCard{
-    box-shadow: 0px 0px 1px 1px rgba(99, 102, 241, 0.1);
-    &.active{
-        @include styleclass('border-1 border-solid border-indigo-500');
-        .kanbanCard-active-indicator{
-            @include styleclass('flex');
-        }
-    }
-    &.current{
-            box-shadow: 0px 0px 1px 1px rgba(99, 102, 241, 0.1);
-            animation: pulse-animation 1.5s 2; 
-            animation-delay:0.5s;
-    }
+.p-accordion-content {
+    @include styleclass('surface-50, p-4, border-round-sm');
 }
-
-@keyframes pulse-animation {
-    0% {
-      box-shadow: 0 0 0 0px rgba(99, 102, 241, 0.2);
-    }
-    100% {
-      box-shadow: 0 0 0 20px rgba(99, 102, 241, 0);
-    }
-  }

@@ -22,7 +22,7 @@
       <div class="contentArea flex flex-column surface-50 p-6 flex-grow-1">
         <div class="flex-grow-1 bg-white">
             <div class="grid h-full m-0">
-                <div class="col-12 lg:col-4 xl:col-2 border-none border-right-1 border-solid border-100 lg:h-full p-4 lg:p-6 xl:p-8">
+                <div class="col-12 xl:col-3  border-none border-right-1 border-solid border-100 lg:h-full p-6">
                     <div class="grid">
                         <div class="col-12">
                             <div class="flex flex-column">
@@ -48,65 +48,78 @@
                         </div>
                     </div>
                 </div>
-                <div class="col lg:col-8 xl:col-10 p-4 lg:p-6 xl:p-8 flex flex-column">
-                    <div>
-                        <div class="grid">
-                            <div class="col-12">
-                                <p class="mb-2 mt-0 text-xl font-semibold">Basic Details</p>
-                            </div>
-                            <div class="col-12 xl:col-3 mb-4">
-                                <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0">
-                                    <ng-template pTemplate="display" class="flex w-100 hover:bg-white p-0">
-                                        <p class="text-base font-medium mb-0 mt-0 text-color-secondary">Name</p>
-                                        <p class="text-base font-medium mb-0 mt-0 text-color">Olivia Rhye</p>
-                                    </ng-template>
-                                    <ng-template pTemplate="content" class="flex flex-column">
-                                        <label class="block mb-2">Name</label>
-                                        <input type="text" value="Olivia Rhye" pInputText class="w-full">
-                                    </ng-template>
-                                </p-inplace>
-                            </div>
-                            <div class="col-12 xl:col-3 mb-4">
-                                <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0">
-                                    <ng-template pTemplate="display" class="flex w-100 hover:bg-white p-0">
-                                        <p class="text-base font-medium mb-0 mt-0 text-color-secondary">Address</p>
-                                        <p class="text-base font-medium mb-0 mt-0 text-color">12/1, B Block, Main Street, AU</p>
-                                    </ng-template>
-                                    <ng-template pTemplate="content" class="flex flex-column">
-                                        <label class="block mb-2">Address</label>
-                                        <input type="text" value="12/1, B Block, Main Street, AU" pInputText class="w-full">
-                                    </ng-template>
-                                </p-inplace>
-                            </div>
-                            <div class="col-12 xl:col-3 mb-4">
-                                <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0">
-                                    <ng-template pTemplate="display" class="flex w-100 hover:bg-white p-0">
-                                        <p class="text-base font-medium mb-0 mt-0 text-color-secondary">Contact</p>
-                                        <p class="text-base font-medium mb-0 mt-0 text-color">+11 123456789</p>
-                                    </ng-template>
-                                    <ng-template pTemplate="content" class="flex flex-column">
-                                        <label class="block mb-2">Contact</label>
-                                        <input type="text" value="+11 123456789" pInputText class="w-full">
-                                    </ng-template>
-                                </p-inplace>
-                            </div>
-                            <div class="col-12 xl:col-3 mb-4">
-                                <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0">
-                                    <ng-template pTemplate="display" class="flex w-100 hover:bg-white p-0">
-                                        <p class="text-base font-medium mb-0 mt-0 text-color-secondary">ID/ Passport</p>
-                                        <p class="text-base font-medium mb-0 mt-0 text-color">1234567890</p>
-                                    </ng-template>
-                                    <ng-template pTemplate="content" class="flex flex-column">
-                                        <label class="block mb-2">ID/ Passport</label>
-                                        <input type="text" value="1234567890" pInputText class="w-full">
-                                    </ng-template>
-                                </p-inplace>
+                <div class="col-12 xl:col-9 flex-column p-6">
+                    <div class="flex flex-column h-full bg-white">
+                        <div class="flex-grow-1">
+                            <div class="grid m-0">
+                                <div class="col-12 xl:col-6 mb-4">
+                                    <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0">
+                                        <ng-template pTemplate="display" class="flex w-100 hover:bg-white p-0">
+                                            <p class="text-base font-medium mb-0 mt-0 text-color-secondary">Name</p>
+                                            <p class="text-base font-medium mb-0 mt-0 text-color">Olivia Rhye</p>
+                                        </ng-template>
+                                        <ng-template pTemplate="content" class="flex flex-column">
+                                            <label class="block mb-2">Name</label>
+                                            <input type="text" value="Olivia Rhye" pInputText class="w-full">
+                                        </ng-template>
+                                    </p-inplace>
+                                </div>
+                                <div class="col-12 xl:col-6 mb-4">
+                                    <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0">
+                                        <ng-template pTemplate="display" class="flex w-100 hover:bg-white p-0">
+                                            <p class="text-base font-medium mb-0 mt-0 text-color-secondary">Address</p>
+                                            <p class="text-base font-medium mb-0 mt-0 text-color">12/1, B Block, Main Street, AU</p>
+                                        </ng-template>
+                                        <ng-template pTemplate="content" class="flex flex-column">
+                                            <label class="block mb-2">Address</label>
+                                            <input type="text" value="12/1, B Block, Main Street, AU" pInputText class="w-full">
+                                        </ng-template>
+                                    </p-inplace>
+                                </div>
+                                <div class="col-12 xl:col-6 mb-4">
+                                    <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0">
+                                        <ng-template pTemplate="display" class="flex w-100 hover:bg-white p-0">
+                                            <p class="text-base font-medium mb-0 mt-0 text-color-secondary">Email</p>
+                                            <p class="text-base font-medium mb-0 mt-0 text-color">Olivia@milleracc.com</p>
+                                        </ng-template>
+                                        <ng-template pTemplate="content" class="flex flex-column">
+                                            <label class="block mb-2">Email</label>
+                                            <input type="text" value="Olivia@milleracc.com" pInputText class="w-full">
+                                        </ng-template>
+                                    </p-inplace>
+                                </div>
+                                <div class="col-12 xl:col-6 mb-4">
+                                    <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0">
+                                        <ng-template pTemplate="display" class="flex w-100 hover:bg-white p-0">
+                                            <p class="text-base font-medium mb-0 mt-0 text-color-secondary">Contact</p>
+                                            <p class="text-base font-medium mb-0 mt-0 text-color">+11 123456789</p>
+                                        </ng-template>
+                                        <ng-template pTemplate="content" class="flex flex-column">
+                                            <label class="block mb-2">Contact</label>
+                                            <input type="text" value="+11 123456789" pInputText class="w-full">
+                                        </ng-template>
+                                    </p-inplace>
+                                </div>
+                                <div class="col-12 xl:col-6 mb-4">
+                                    <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0">
+                                        <ng-template pTemplate="display" class="flex w-100 hover:bg-white p-0">
+                                            <p class="text-base font-medium mb-0 mt-0 text-color-secondary">ID/ Passport</p>
+                                            <p class="text-base font-medium mb-0 mt-0 text-color">1234567890</p>
+                                        </ng-template>
+                                        <ng-template pTemplate="content" class="flex flex-column">
+                                            <label class="block mb-2">ID/ Passport</label>
+                                            <input type="text" value="1234567890" pInputText class="w-full">
+                                        </ng-template>
+                                    </p-inplace>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="grid mt-6">
-                        <div class="col-12">
-                            <button pButton pRipple type="button" label="Edit Details" class="p-button-outlined p-button-sm"></button>
+                        <div class="flex-shrink-0">
+                            <div class="grid m-0">
+                                <div class="col-12 py-0">
+                                    <button pButton pRipple type="button" label="Edit Details" class="p-button-outlined p-button-sm"></button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
