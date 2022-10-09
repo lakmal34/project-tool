@@ -12,20 +12,110 @@ import { UserComponent } from './user/user/user.component';
 import { ProjectProfileComponent } from './projects/project-profile/project-profile.component';
 import { ClientsComponent } from './clients/clients.component';
 import { ClientProfileComponent } from './clients/client-profile/client-profile.component';
+import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
+import { EmployeeProfileComponent } from './employees/employee-profile/employee-profile.component';
+import { TemplateListComponent } from './templates/template-list/template-list.component';
 
 const routes: Routes = [
-  { path:'projectlist', component: ProjectListComponent},
-  { path: 'register', component:RegisterComponent},
-  { path:'onboarding', component:OnboardingComponent},
-  { path:'login', component:LoginComponent},
-  { path:'forgotpassword', component:ForgotPasswordComponent},
-  { path:'verifypassword', component:VerifyPasswordComponent},
-  { path:'resetpassword', component:ResetPasswordComponent},
-  { path:'companyprofile', component:CompanyProfileComponent},
-  { path:'userprofile', component:UserComponent},
-  { path:'projectProfile', component:ProjectProfileComponent},
-  { path:'clientlist', component:ClientsComponent},
-  { path:'clientProfile', component:ClientProfileComponent},
+  { 
+    path:'', 
+    redirectTo: '/projectlist', 
+    pathMatch: 'full',
+    data: {
+      breadcrumb: 'Projects'
+    },
+  },
+  { path:'projectlist',
+    component: ProjectListComponent,
+    data: {
+      breadcrumb: 'Projects'
+    },
+  },
+  { path: 'register',
+    component:RegisterComponent,
+    data: {
+      breadcrumb: 'register'
+    },
+  },
+  { path:'onboarding',
+    component:OnboardingComponent,
+    data: {
+      breadcrumb: 'onboarding'
+    },
+  },
+  { path:'login',
+    component:LoginComponent,
+    data: {
+      breadcrumb: 'login'
+    },
+  },
+  { 
+    path:'forgotpassword', 
+    component:ForgotPasswordComponent,
+    data: {
+      breadcrumb: 'forgotpassword'
+    },
+  },
+  { path:'verifypassword', 
+    component:VerifyPasswordComponent,
+    data: {
+      breadcrumb: 'verifypassword'
+    },
+  },
+  { path:'resetpassword', 
+    component:ResetPasswordComponent,
+    data: {
+      breadcrumb: 'resetpassword'
+    },
+  },
+  { path:'companyprofile', 
+    component:CompanyProfileComponent,
+    data: {
+      breadcrumb: 'Company'
+    },
+  },
+  { path:'userprofile', 
+    component:UserComponent,
+    data: {
+      breadcrumb: 'My Profile'
+    },
+  },
+  { path:'projectProfile', 
+    component:ProjectProfileComponent,
+    data: {
+      breadcrumb: 'Project Profile'
+    },
+  },
+  { path:'clientlist', 
+    component:ClientsComponent,
+    data: {
+      breadcrumb: 'Clients'
+    },
+  },
+  { path:'clientProfile', 
+    component:ClientProfileComponent,
+    data: {
+      breadcrumb: 'clientProfile'
+    },
+  },
+  { path:'employeelist', 
+    component:EmployeeListComponent,
+    data: {
+      breadcrumb: 'Employees'
+    },
+  },
+  { path:'employeeprofile', 
+    component:EmployeeProfileComponent,
+    data: {
+      breadcrumb: 'Employee Profile'
+    },
+  },
+  { path:'templatelist', 
+    component:TemplateListComponent,
+    data: {
+      breadcrumb: 'Templates'
+    },
+  },
 ];
 
 @NgModule({

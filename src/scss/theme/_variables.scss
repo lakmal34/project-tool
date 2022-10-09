@@ -2,55 +2,91 @@ $primaryColor: #3b82f6;
 $primaryDarkColor: #1d4ed8;
 $primaryDarkerColor: #1e3a8a;
 $primaryTextColor: #ffffff;
-$primaryTransparent:#eff6ff;
-$helpTransparent:#eef2ff;
 
 $highlightBg: #dbeafe;
 $highlightTextColor: #3b82f6;
 
 /* Custom variables we need */
-$blue:#3b82f6;
-$green:#10b981;
-$yellow:#eab308;
-$cyan:#0ea5e9;
-$pink:#ec4899;
-$indigo:#6366f1;
-$teal:#14b8a6;
-$orange:#f59e0b;
-$bluegray:#64748b;
-$purple:#a855f7;
-$red:#ef4444;
-$help:$indigo;
+$primary: $primaryColor;
+$secondary: #64748B;
+$success: #22C55E; /*green*/
+$info: #06B6D4; /*cyan*/
+$warning: #F97316; /*orange*/
+$danger: #EF4444; /*red*/
+$help: #6366F1; /*indigo*/
 
+/*for  hover,active - drvrrity message text*/
+$successDark:#22C55E; 
+$infoDark:#06B6D4; 
+$warningDark:#F97316; 
+$dangerDark:#EF4444; 
+$helpDark:#6366F1; 
+
+/*for severities message background*/
+$primaryLight: #eff6ff !default;
+$successLight:#22C55E; 
+$infoLight:#06B6D4;
+$warningLight:#F97316;
+$dangerLight:#EF4444;
+$helpLight:#6366F1;
+
+/*remaining colors*/
+$blue: #3B82F6;
+$yellow: #EAB308;
+$pink: #EC4899;
+$teal: #14B8A6;
+$purple: #A855F7;
 
 $colors: (
-    "blue": $blue,
-    "green": $green,
-    "yellow": $yellow,
-    "cyan": $cyan,
-    "pink": $pink,
-    "indigo": $indigo,
-    "teal": $teal,
-    "orange": $orange,
-    "bluegray": $bluegray,
-    "purple": $purple,
-    "red": $red,
-    "primary": $primaryColor
+    "primary": $primaryColor,
+    "bluegray": $secondary,
+    "green": $success,
+    "cyan": $info,
+    "orange": $warning,
+    "red": $danger,
+    "indigo": $help,
+    "blue": #3B82F6,
+    "yellow": #EAB308,
+    "pink": #EC4899,
+    "teal": #14B8A6,
+    "purple": #A855F7,  
 );
 
 //reused color variables
 $shade000:#ffffff !default;    //surface
-$shade100:#f8fafc !default;    //header background      //updated: gray-50
+$shade100:#f8fafc !default;    //header background,$imagePreviewIndicatorColor $imagePreviewActionIconColor $imagePreviewActionIconHoverColor //updated: gray-50
 $shade200:#f1f5f9 !default;    //hover background       //updated: gray-100
 $shade300:#e2e8f0 !default;    //border, divider        //updated  coolgray-200
 $shade400:#cbd5e1 !default;    //input border           //updated: gray-300
 $shade500:#94a3b8 !default;    //input icon             //updated: coolgray500
 $shade600:#64748b !default;    //text secondary color   //updated: gray-500
-$shade700:#475569 !default;    
+$shade700:#010101 !default;    
 $shade800:#334155 !default;    //unused                 gray-800
 $shade900:#1e293b !default;    //text color             //updated: gray-700
 
+//additional variables to use in surface colors (using primeng surface colors)
+$gray050:#FAFAFA !default;    
+$gray100:#F4F4F5 !default;    
+$gray200:#E4E4E7 !default;    
+$gray300:#D4D4D8 !default;    
+$gray400:#A1A1AA !default;    
+$gray500:#71717A !default;    
+$gray600:#52525B !default;    
+$gray700:#3F3F46 !default;    
+$gray800:#27272A !default;    
+$gray900:#18181B !default; 
 
+$surface000:#ffffff !default;   
+$surface050:$gray050 !default;    
+$surface100:$gray100 !default;    
+$surface200:$gray200 !default;    
+$surface300:$gray300 !default;    
+$surface400:$gray400 !default;    
+$surface500:$gray500 !default;    
+$surface600:$gray600 !default;    
+$surface700:$gray700 !default;    
+$surface800:$gray800 !default;    
+$surface900:$gray900 !default;  
 
 
 //global
@@ -65,22 +101,22 @@ $formElementTransition:none !default;
 $actionIconTransition:none !default;
 $listItemTransition:none !default;
 $primeIconFontSize:1rem !default;
-$divider:1px solid #f3f4f6 !default;    //coolgray-100
+$divider:1px solid $shade200 !default;    //coolgray-100
 $inlineSpacing:.5rem !default;
 $disabledOpacity:.6 !default;
 $maskBg:rgba(0, 0, 0, 0.4) !default;
 $loadingIconFontSize:2rem !default;
-$errorColor:#e24c4c !default;
+$errorColor:$danger !default;
 
 //scale
 $scaleSM:0.875 !default;
 $scaleLG:1.25 !default;
 
 //focus
-$focusOutlineColor:#6366F1 !default;
+$focusOutlineColor:transparent;   /* #6366F1 !default; lakmal changed*/
 $focusOutline:0 none !default;
 $focusOutlineOffset:0 !default;
-$focusShadow:0 0 0 1px $focusOutlineColor !default;
+$focusShadow:none;
 
 //action icons
 $actionIconWidth:2rem !default;
@@ -102,7 +138,7 @@ $inputIconColor:$shade600 !default;
 $inputBorder:1px solid $shade400 !default;
 $inputHoverBorderColor:$shade400 !default;
 $inputFocusBorderColor:$primaryColor !default;
-$inputErrorBorderColor:#f0a9a7 !default;
+$inputErrorBorderColor:$danger; /*lakmal changed #f0a9a7 !default;*/
 $inputPlaceholderTextColor:$shade600 !default;
 $inputFilledBg:$shade100 !default;
 $inputFilledHoverBg:$inputFilledBg !default;
@@ -141,9 +177,9 @@ $inputOverlayShadow:0 0 #0000,0 0 #0000,0 10px 15px -3px rgba(0, 0, 0, 0.1),0 4p
 
 //password
 $passwordMeterBg:$shade300 !default;
-$passwordWeakBg:#EF4444 !default;
-$passwordMediumBg:#F59E0B !default;
-$passwordStrongBg:#22C55E !default;
+$passwordWeakBg:$danger !default;
+$passwordMediumBg:$warning !default;
+$passwordStrongBg:$success !default;
 
 //button
 $buttonPadding:.75rem 1rem !default;
@@ -168,70 +204,70 @@ $plainButtonTextColor:$textSecondaryColor !default;
 $plainButtonHoverBgColor:$shade200 !default;
 $plainButtonActiveBgColor:$shade300 !default;
 
-$secondaryButtonBg:#64748B !default;
-$secondaryButtonTextColor:#ffffff !default;
+$secondaryButtonBg:$secondary !default;
+$secondaryButtonTextColor:$primaryTextColor !default;
 $secondaryButtonBorder:1px solid $secondaryButtonBg !default;
-$secondaryButtonHoverBg:#475569 !default;
+$secondaryButtonHoverBg:$shade700 !default;
 $secondaryButtonTextHoverColor:$secondaryButtonTextColor !default;
-$secondaryButtonHoverBorderColor:#475569 !default;
-$secondaryButtonActiveBg:#475569 !default;
+$secondaryButtonHoverBorderColor:$shade700 !default;
+$secondaryButtonActiveBg:$shade700 !default;
 $secondaryButtonTextActiveColor:$secondaryButtonTextColor !default;
-$secondaryButtonActiveBorderColor:#475569 !default;
+$secondaryButtonActiveBorderColor:$shade700 !default;
 $secondaryButtonFocusShadow:0 0 0 0.2rem scale-color($secondaryButtonBg, $lightness: 60%) !default;
 
-$infoButtonBg:#3B82F6 !default;
-$infoButtonTextColor:#ffffff !default;
+$infoButtonBg:$info !default;
+$infoButtonTextColor:$primaryTextColor !default;
 $infoButtonBorder:1px solid $infoButtonBg !default;
-$infoButtonHoverBg:#2563EB !default;
+$infoButtonHoverBg:$infoDark !default;
 $infoButtonTextHoverColor:$infoButtonTextColor !default;
-$infoButtonHoverBorderColor:#2563EB !default;
-$infoButtonActiveBg:#2563EB !default;
+$infoButtonHoverBorderColor:$infoDark !default;
+$infoButtonActiveBg:$infoDark !default;
 $infoButtonTextActiveColor:$infoButtonTextColor !default;
-$infoButtonActiveBorderColor:#2563EB !default;
+$infoButtonActiveBorderColor:$infoDark !default;
 $infoButtonFocusShadow:0 0 0 0.2rem scale-color($infoButtonBg, $lightness: 60%) !default;
 
-$successButtonBg:#22C55E !default;
-$successButtonTextColor:#ffffff !default;
+$successButtonBg:$success !default;
+$successButtonTextColor:$primaryTextColor !default;
 $successButtonBorder:1px solid $successButtonBg !default;
-$successButtonHoverBg:#16A34A !default;
+$successButtonHoverBg:$successDark !default;
 $successButtonTextHoverColor:$successButtonTextColor !default;
-$successButtonHoverBorderColor:#16A34A !default;
-$successButtonActiveBg:#16A34A !default;
+$successButtonHoverBorderColor:$successDark !default;
+$successButtonActiveBg:$successDark !default;
 $successButtonTextActiveColor:$successButtonTextColor !default;
-$successButtonActiveBorderColor:#16A34A !default;
+$successButtonActiveBorderColor:$successDark !default;
 $successButtonFocusShadow:0 0 0 0.2rem scale-color($successButtonBg, $lightness: 60%) !default;
 
-$warningButtonBg:#F59E0B !default;
-$warningButtonTextColor:#ffffff !default;
+$warningButtonBg:$warning!default;
+$warningButtonTextColor:$primaryTextColor !default;
 $warningButtonBorder:1px solid $warningButtonBg !default;
-$warningButtonHoverBg:#D97706 !default;
+$warningButtonHoverBg:$warningDark !default;
 $warningButtonTextHoverColor:$warningButtonTextColor !default;
-$warningButtonHoverBorderColor:#D97706 !default;
-$warningButtonActiveBg:#D97706 !default;
+$warningButtonHoverBorderColor:$warningDark !default;
+$warningButtonActiveBg:$warningDark !default;
 $warningButtonTextActiveColor:$warningButtonTextColor !default;
-$warningButtonActiveBorderColor:#D97706 !default;
+$warningButtonActiveBorderColor:$warningDark !default;
 $warningButtonFocusShadow:0 0 0 0.2rem scale-color($warningButtonBg, $lightness: 60%) !default;
 
 $helpButtonBg:$help !default;
-$helpButtonTextColor:#ffffff !default;
+$helpButtonTextColor:$primaryTextColor!default;
 $helpButtonBorder:1px solid $helpButtonBg !default;
-$helpButtonHoverBg:#9333EA !default;
+$helpButtonHoverBg:$helpDark !default;
 $helpButtonTextHoverColor:$helpButtonTextColor !default;
-$helpButtonHoverBorderColor:#9333EA !default;
-$helpButtonActiveBg:#9333EA !default;
+$helpButtonHoverBorderColor:$helpDark!default;
+$helpButtonActiveBg:$helpDark !default;
 $helpButtonTextActiveColor:$helpButtonTextColor !default;
-$helpButtonActiveBorderColor:#9333EA !default;
+$helpButtonActiveBorderColor:$helpDark!default;
 $helpButtonFocusShadow:0 0 0 0.2rem scale-color($helpButtonBg, $lightness: 60%) !default;
 
-$dangerButtonBg:#EF4444 !default;
-$dangerButtonTextColor:#ffffff !default;
+$dangerButtonBg:$danger !default;
+$dangerButtonTextColor:$primaryTextColor!default;
 $dangerButtonBorder:1px solid $dangerButtonBg !default;
-$dangerButtonHoverBg:#DC2626 !default;
+$dangerButtonHoverBg:$dangerDark !default;
 $dangerButtonTextHoverColor:$dangerButtonTextColor !default;
-$dangerButtonHoverBorderColor:#DC2626 !default;
-$dangerButtonActiveBg:#DC2626 !default;
+$dangerButtonHoverBorderColor:$dangerDark !default;
+$dangerButtonActiveBg:$dangerDark !default;
 $dangerButtonTextActiveColor:$dangerButtonTextColor !default;
-$dangerButtonActiveBorderColor:#DC2626 !default;
+$dangerButtonActiveBorderColor:$dangerDark !default;
 $dangerButtonFocusShadow:0 0 0 0.2rem scale-color($dangerButtonBg, $lightness: 60%) !default;
 
 $linkButtonColor:$primaryColor !default;
@@ -295,8 +331,8 @@ $inplaceTextHoverColor:$shade900 !default;
 
 //rating
 $ratingIconFontSize:1.143rem !default;
-$ratingCancelIconColor:#EF4444 !default;
-$ratingCancelIconHoverColor:#DC2626 !default;
+$ratingCancelIconColor:$danger !default;
+$ratingCancelIconHoverColor:$dangerDark !default;
 $ratingStarIconOffColor:$shade700 !default;
 $ratingStarIconOnColor:$primaryColor !default;
 $ratingStarIconHoverColor:$primaryColor !default;
@@ -605,22 +641,22 @@ $toastTitleFontWeight:700 !default;
 $toastDetailMargin:$inlineSpacing 0 0 0 !default;
 
 //severities
-$infoMessageBg:#EFF6FF !default;
+$infoMessageBg:$infoLight !default;
 $infoMessageBorder:none !default;
-$infoMessageTextColor:#2563EB !default;
-$infoMessageIconColor:#2563EB !default;
-$successMessageBg:#ECFDF5 !default;
+$infoMessageTextColor:$infoDark !default;
+$infoMessageIconColor:$infoDark !default;
+$successMessageBg:$successLight !default;
 $successMessageBorder:none !default;
-$successMessageTextColor:#059669 !default;
-$successMessageIconColor:#059669 !default;
-$warningMessageBg:#FEF3C7 !default;
+$successMessageTextColor:$successDark !default;
+$successMessageIconColor:$successDark !default;
+$warningMessageBg:$warningLight !default;
 $warningMessageBorder:none !default;
-$warningMessageTextColor:#D97706 !default;
-$warningMessageIconColor:#D97706 !default;
-$errorMessageBg:#FEF3C7 !default;
+$warningMessageTextColor:$warningDark !default;
+$warningMessageIconColor:$warningDark !default;
+$errorMessageBg:$dangerLight !default;
 $errorMessageBorder:none !default;
-$errorMessageTextColor:#DC2626 !default;
-$errorMessageIconColor:#DC2626 !default;
+$errorMessageTextColor:$dangerDark!default;
+$errorMessageIconColor:$dangerDark!default;
 
 //overlays
 $overlayContentBorder:0 none !default;
@@ -824,8 +860,8 @@ $speedDialActionWidth: 3rem !default;
 $speedDialActionHeight: 3rem !default;
 $speedDialActionBg: $shade700 !default;
 $speedDialActionHoverBg: $shade800 !default;
-$speedDialActionTextColor: #fff !default;
-$speedDialActionTextHoverColor: #fff !default;
+$speedDialActionTextColor: $primaryTextColor !default;
+$speedDialActionTextHoverColor: $primaryTextColor !default;
 
 //dock
 $dockActionWidth: 4rem !default;
@@ -842,12 +878,12 @@ $dockBorderRadius: .5rem !default;
 //image
 $imageMaskBg:rgba(0,0,0,0.9) !default;
 $imagePreviewToolbarPadding:1rem !default;
-$imagePreviewIndicatorColor:#f8f9fa !default;
+$imagePreviewIndicatorColor:$shade100 !default;
 $imagePreviewIndicatorBg:rgba(0,0,0,0.5) !default;
 $imagePreviewActionIconBg:transparent !default;
-$imagePreviewActionIconColor:#f8f9fa !default;
+$imagePreviewActionIconColor:$shade100 !default;
 $imagePreviewActionIconHoverBg:rgba(255,255,255,0.1) !default;
-$imagePreviewActionIconHoverColor:#f8f9fa !default;
+$imagePreviewActionIconHoverColor:$shade100 !default;
 $imagePreviewActionIconWidth:3rem !default;
 $imagePreviewActionIconHeight:3rem !default;
 $imagePreviewActionIconFontSize:1.5rem !default;
@@ -860,41 +896,119 @@ $imagePreviewActionIconBorderRadius:50% !default;
     --surface-d:#{$shade300};
     --surface-e:#{$shade000};
     --surface-f:#{$shade000};
-    --text-color:#{$shade700};
+    --text-color:#{$shade900};
     --text-color-secondary:#{$shade600};
     --primary-color:#{$primaryColor};
     --primary-color-text:#{$primaryTextColor};
     --font-family:#{$fontFamily};
-    --surface-0: #ffffff;
-    --surface-50: #FAFAFA;
-    --surface-100: #F4F4F5;
-    --surface-200: #E4E4E7;
-    --surface-300: #D4D4D8;
-    --surface-400: #A1A1AA;
-    --surface-500: #71717A;
-    --surface-600: #52525B;
-    --surface-700: #3F3F46;
-    --surface-800: #27272A;
-    --surface-900: #18181B;
-    --gray-50: #FAFAFA;
-    --gray-100: #F4F4F5;
-    --gray-200: #E4E4E7;
-    --gray-300: #D4D4D8;
-    --gray-400: #A1A1AA;
-    --gray-500: #71717A;
-    --gray-600: #52525B;
-    --gray-700: #3F3F46;
-    --gray-800: #27272A;
-    --gray-900: #18181B;
+    --surface-0: #{$surface000};
+    --surface-50: #{$surface050};
+    --surface-100: #{$surface100};
+    --surface-200: #{$surface200};
+    --surface-300: #{$surface300};
+    --surface-400: #{$surface400};
+    --surface-500: #{$surface500};
+    --surface-600: #{$surface600};
+    --surface-700: #{$surface700};
+    --surface-800: #{$surface800};
+    --surface-900: #{$surface900};
+    --gray-50: #{$gray050};
+    --gray-100: #{$gray100};
+    --gray-200: #{$gray200};
+    --gray-300: #{$gray300};
+    --gray-400: #{$gray400};
+    --gray-500: #{$gray500};
+    --gray-600: #{$gray600};
+    --gray-700: #{$gray700};
+    --gray-800: #{$gray800};
+    --gray-900: #{$gray900};
     --content-padding:#{$panelContentPadding};
     --inline-spacing:#{$inlineSpacing};
     --border-radius:#{$borderRadius};
-    --surface-ground:#FAFAFA;
-    --surface-section:#ffffff;
-    --surface-card:#ffffff;
-    --surface-overlay:#ffffff;
-    --surface-border:#e5e7eb;
-    --surface-hover: #f4f4f5;
+    --surface-ground:#{$surface050};
+    --surface-section:#{$surface000};
+    --surface-card:#{$surface000};
+    --surface-overlay:#{$surface000};
+    --surface-border:#{$surface200}; //#e5e7eb;
+    --surface-hover: #{$surface100};
     --focus-ring: #{$focusShadow};
     --maskbg: #{$maskBg};
 }
+
+
+$space-scales:0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 2, 2.25, 2.5, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,19,20,21 !global; 
+$padding-properties: (
+    '': 'padding',
+    't': 'padding-top',
+    'r': 'padding-right',
+    'l': 'padding-left',
+    'b': 'padding-bottom',
+    'x': ('padding-left','padding-right'),
+    'y': ('padding-top','padding-bottom')
+);
+
+$margin-properties: (
+    '': 'margin',
+    't': 'margin-top',
+    'r': 'margin-right',
+    'l': 'margin-left',
+    'b': 'margin-bottom',
+    'x': ('margin-left','margin-right'),
+    'y': ('margin-top','margin-bottom')
+);
+
+$max-width-properties: size-map((
+    'max-w-0': 0px,
+    'max-w-full': 100%,
+    'max-w-screen': 100vw,
+    'max-w-half': 50%
+), 'max-w');
+
+$width-properties: size-map((
+    'w-full': 100%,
+    'w-half':50%,
+    'w-screen': 100vw,
+    'w-auto': auto,
+    'w-1': 8.3333%,
+    'w-2': 16.6667%,
+    'w-3': 25%,
+    'w-4': 33.3333%,
+    'w-5': 41.6667%,
+    'w-6': 50%,
+    'w-7': 58.3333%,
+    'w-8': 66.6667%,
+    'w-9': 75%,
+    'w-10': 83.3333%,
+    'w-11': 91.6667%,
+    'w-12': 100%,
+    'w-40rem':40rem,
+), 'w');
+
+$border-scales:0px, 1px, 2px, 3px, 4px, 5px, 6px, 7px, 8px;
+
+$border-directions: (
+    '': 'border',
+    'top': 'border-top',
+    'right': 'border-right',
+    'left': 'border-left',
+    'bottom': 'border-bottom',
+    'x': ('border-left','border-right'),
+    'y': ('border-top','border-bottom')
+);
+
+$border-styles: (
+    'border-solid': solid,
+    'border-dashed': dashed,
+    'border-dotted': dotted,
+    'border-double': double
+);
+
+@include border-class('border', $border-directions, $border-scales);
+@include style-class('border-style', $border-styles, true);
+@include style-class('width', $width-properties, true);
+@include style-class('max-width', $max-width-properties, true);
+@include spacing-class('p', $padding-properties, $space-scales);
+@include spacing-class('m', $margin-properties, $space-scales, true, true, true);
+
+
+

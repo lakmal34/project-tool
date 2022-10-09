@@ -23,10 +23,7 @@ import {TableModule} from 'primeng/table';
 import {AccordionModule} from 'primeng/accordion';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {StyleClassModule} from 'primeng/styleclass';
-
 import { ProductService } from './productservice';
-import { RepairService } from './repairservice';
-import { MsoService } from './msoservice';
 import { HttpClientModule } from '@angular/common/http';
 import { SidebarModule } from 'primeng/sidebar';
 import {DropdownModule} from 'primeng/dropdown';
@@ -54,6 +51,12 @@ import { UserComponent } from './user/user/user.component';
 import { ProjectProfileComponent } from './projects/project-profile/project-profile.component';
 import { ClientsComponent } from './clients/clients.component';
 import { ClientProfileComponent } from './clients/client-profile/client-profile.component';
+import { TopnavComponent } from './shared/topnav/topnav.component';
+import { SidemenuComponent } from './shared/sidemenu/sidemenu.component';
+import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
+import { EmployeeProfileComponent } from './employees/employee-profile/employee-profile.component';
+import { TemplateListComponent } from './templates/template-list/template-list.component';
+import {BreadcrumbModule} from 'primeng/breadcrumb';
 
 
 @NgModule({
@@ -71,6 +74,11 @@ import { ClientProfileComponent } from './clients/client-profile/client-profile.
     ProjectProfileComponent,
     ClientsComponent,
     ClientProfileComponent,
+    TopnavComponent,
+    SidemenuComponent,
+    EmployeeListComponent,
+    EmployeeProfileComponent,
+    TemplateListComponent,
   ],
   imports: [
     BrowserModule,
@@ -108,10 +116,10 @@ import { ClientProfileComponent } from './clients/client-profile/client-profile.
     MultiSelectModule,
     SelectButtonModule,
     PasswordModule,
-    PanelMenuModule
-    
+    PanelMenuModule,
+    BreadcrumbModule
   ],
-  providers: [ProductService,RepairService,MsoService],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

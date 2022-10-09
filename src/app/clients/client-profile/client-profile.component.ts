@@ -10,6 +10,7 @@ interface CompanyProfile{
   code:number
 }
 
+
 @Component({
   selector: 'app-client-profile',
   templateUrl: './client-profile.component.html',

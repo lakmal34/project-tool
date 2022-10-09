@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {MenuItem} from 'primeng/api';
 import { Product } from '../product';
 import { ProductService } from '../productservice';
 
@@ -22,8 +21,6 @@ interface progress {
 })
 export class ClientsComponent implements OnInit {
 
-  items: MenuItem[];
-  mobileItems: MenuItem[];
   product: Product[];
   status: boolean = false;
   clients: clients[];
@@ -31,6 +28,7 @@ export class ClientsComponent implements OnInit {
   visibleSidebar2;
   selectedSite:clients[];
   date1: Date;
+  companyClients: any[];
 
 
    constructor(private productService: ProductService) {
@@ -46,21 +44,6 @@ export class ClientsComponent implements OnInit {
 
   ngOnInit(): void {
     this.productService.getProducts().then(data => this.product = data);
-    this.status = false;  
-    this.items = [
-      {
-        label: 'Company',
-        icon:'pi pi-fw pi-th-large',
-        items: [
-            {
-                label: 'Profile'
-            },
-            {
-                label: 'Resources'
-            }
-        ]
-      }
-    ]
   }
 
 }

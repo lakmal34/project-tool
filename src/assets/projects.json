@@ -1,0 +1,135 @@
+{
+	"data": {
+        "company":{
+            "name": "Walter LLC",
+            "description": "Focused Real-Time Instructionset",
+            "owner": "David Walter",
+            "ownerEmail":"Walter@email.com",
+            "ownderAddress":""
+        },
+        "employees":
+        {
+            "internal":[
+                {
+                    "name": "Bethel Skiles",
+                    "email": "Bethal@internal.com",
+                    "contact": "3524630447",
+                    "type":"Internal",
+                    "companyPosition":"Accountant",
+                    "projectRole":"Level 1 - Consultant"
+                },
+                {
+                    "name": "Tyler Crowe",
+                    "email": "Tyler@internal.com",
+                    "contact": "3609362435",
+                    "type":"Internal",
+                    "companyPosition":"Project manager",
+                    "projectRole":"Level 2 - Seniors Consultant"
+                },
+                {
+                    "name": "David Dorman",
+                    "email": "David@internal.com",
+                    "contact": "7244538869",
+                    "type":"Internal",
+                    "companyPosition":"Accountant",
+                    "projectRole":"Level 1 - Consultant"
+                },
+                {
+                    "name": "Patsy Thompson",
+                    "email": "Patsy@internal.com",
+                    "contact": "9367094301",
+                    "type":"Internal",
+                    "companyPosition":"Auditor",
+                    "projectRole":"Level 1 - Consultant"
+                }
+            ],
+            "external":[
+                {
+                    "name": "Leslie Church",
+                    "email": "Leslie@internal.com",
+                    "contact": "3524630447",
+                    "type":"external",
+                    "companyPosition":"Accountant",
+                    "projectRole":"Level 1 - Consultant"
+                },
+                {
+                    "name": "Emma Gonzalez",
+                    "email": "Emma@internal.com",
+                    "contact": "3609362435",
+                    "type":"external",
+                    "companyPosition":"Project manager",
+                    "projectRole":"Level 2 - Seniors Consultant"
+                },
+                {
+                    "name": "Robert Grover",
+                    "email": "Robert@internal.com",
+                    "contact": "7244538869",
+                    "type":"external",
+                    "companyPosition":"Accountant",
+                    "projectRole":"Level 1 - Consultant"
+                },
+                {
+                    "name": "Michael Huff",
+                    "email": "Michael@internal.com",
+                    "contact": "9367094301",
+                    "type":"external",
+                    "companyPosition":"Auditor",
+                    "projectRole":"Level 1 - Consultant"
+                }
+            ]
+        },
+        "projects":[
+            {
+                "name": "Accouting for Dickens Ltd",
+                "description": "Handling accounting for Dickens Ltd",
+                "client": "Dickens Ltd",
+                "duration":[
+                    {
+                        "start":"June 2022",
+                        "end":"June 2023"
+                    }
+                ],
+                "completion":"15th June 2023",
+                "status":"preliminary"
+            },
+            {
+                "name": "Audit for Olson-Beer",
+                "description": "Annual audit for Olson-Beer",
+                "client": "Olson-Beer",
+                "duration":[
+                    {
+                        "start":"January 2022",
+                        "end":"March 2022"
+                    }
+                ],
+                "completion":"20 March 2022",
+                "status":"preliminary"
+            }
+        ],
+        "clients":[
+            {
+                "name": "Dickens Ltd",
+                "code": "AS0001",
+                "Contact":[
+                    {
+                        "person":"Michael Huff",
+                        "number":"9367094301",
+                        "email":"Michael@internal.com"
+                    }
+                ],
+                "status":"preliminary"
+            },
+            {
+                "name": "Olson-Beer",
+                "code": "AS0002",
+                "Contact":[
+                    {
+                        "person":"Robert Grover",
+                        "number":"7244538869",
+                        "email":"Robert@internal.com"
+                    }
+                ]
+            }
+        ]  
+    }
+}

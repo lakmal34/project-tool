@@ -1,23 +1,8 @@
 <div class="flex">
-    <div class="bg-primary h-screen w-16rem flex-shrink-0">
-      <div class="w-full h-4rem px-4 flex align-items-center">
-        <img src="../../../assets/img/logo-inverse.svg"/>
-      </div>
-      <div class="sideMenu px-4 py-5">
-        <p-panelMenu [transitionOptions]="'10ms'" [model]="items"></p-panelMenu>
-      </div>
-    </div>
+    <app-sidemenu></app-sidemenu>
     <div class="mainContent flex flex-grow-1 flex-column">
   
-      <nav class="bg-white border-1 border-solid border-200 h-4rem px-4 flex align-items-center justify-content-between sticky top-0 w-full">
-        <div class="navbar-left flex align-items-center gap-2">
-          <a class="m-0 font-medium text-color">Company</a>
-          <i class="ri-arrow-right-s-line text-color text-lg"></i>
-          <a class="m-0 font-medium text-color-secondary">Profile</a>
-        </div>
-        <div class="navbar-right">
-        </div>
-      </nav>
+    <app-topnav></app-topnav>
 
       <div class="contentArea flex flex-column surface-50 p-6 flex-grow-1">
         <div class="flex-grow-1 bg-white">
