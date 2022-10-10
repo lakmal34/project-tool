@@ -92,7 +92,7 @@ const routes: Routes = [
       breadcrumb: 'Clients'
     },
   },
-  { path:'clientProfile', 
+  { path:'clientprofile', 
     component:ClientProfileComponent,
     data: {
       breadcrumb: 'Client Profile'

@@ -3,7 +3,7 @@
     <div class="mainContent flex flex-grow-1 flex-column">
   
       <app-topnav></app-topnav>
-      <div class="bg-white border-none border-bottom-1 border-solid border-200 px-4 flex align-items-center justify-content-between">
+      <div class="bg-white secondary-bar border-none border-bottom-1 border-solid border-200 px-4 flex align-items-center justify-content-between">
         <div class="flex align-items-center gap-1">
           <p-dropdown [options]="clients"  optionLabel="name" optionValue="code" class="send-methods mr-6 hidden md:flex" dataKey="code" styleClass="text-sm siteSwitcherDropdown"></p-dropdown>
           <p-dropdown [options]="progress" optionLabel="name" optionValue="code" class="send-methods mr-6 hidden md:flex" dataKey="code" styleClass="text-sm siteSwitcherDropdown"></p-dropdown>
@@ -21,7 +21,7 @@
                   <p-dataView [value]="product">
                     <ng-template let-product pTemplate="listItem">
 
-                        <div class="w-full p-4 bg-white flex border-round-sm mb-2 cursor-pointer">
+                        <div class="w-full p-4 bg-white flex border-round-sm mb-2 cursor-pointer shadow-1" routerLink="/projectProfile" routerLinkActive="active">
 
                           <div class="col-3 p-0  flex align-items-start">
                             <p-avatar

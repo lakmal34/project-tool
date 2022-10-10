@@ -140,9 +140,9 @@
                                 <div class="col-12 p-4">
                                     <p-dataView [value]="product">
                                         <ng-template let-product pTemplate="listItem">
-                                            <div class="w-full p-4 bg-white flex border-round-sm mb-2 cursor-pointer">
+                                            <div class="w-full p-4 bg-white flex border-round-sm mb-2 cursor-pointer shadow-1">
                     
-                                              <div class="flex-grow-1 flex align-items-center">
+                                              <div class="flex-grow-1 flex align-items-center col-4 p-0">
                                                 <p-avatar
                                                     image="./../../assets/img/company-avatar-default.png"
                                                     size="large"
@@ -157,7 +157,7 @@
                                                     </p>
                                                   </div>
                                               </div>
-                                              <div class="flex-grow-1 flex flex-column">
+                                              <div class="flex-grow-1 flex flex-column col-3 p-0">
                                                 <p class="my-0 ml-3">
                                                     {{product.usertype}}
                                                 </p>
@@ -165,7 +165,7 @@
                                                   Type
                                                 </p>
                                               </div>
-                                              <div class="flex-grow-1 flex flex-column">
+                                              <div class="flex-grow-1 flex flex-column col-3 p-0">
                                                 <p class="my-0 ml-3">
                                                     {{product.usercompanyrole}}
                                                 </p>
@@ -173,7 +173,7 @@
                                                     Company position
                                                 </p>
                                               </div>
-                                              <div class="flex-grow-1 flex flex-column">
+                                              <div class="flex-grow-1 flex flex-column col-3 p-0">
                                                 <p class="my-0 ml-3">
                                                     {{product.usercompanyrole}}
                                                 </p>
@@ -209,9 +209,9 @@
                                         <p-accordionTab header="Stage 1: Work Steps Monitoring" [selected]="true">
                                             <p-dataView [value]="product">
                                                 <ng-template let-product pTemplate="listItem">
-                                                    <div class="w-full p-4 bg-white flex border-round-sm mb-2 cursor-pointer">
+                                                    <div class="w-full p-4 bg-white flex border-round-sm mb-2 cursor-pointer shadow-1">
                             
-                                                      <div class="flex-grow-1 flex align-items-center">
+                                                      <div class="flex-grow-1 flex align-items-center col-4 p-0">
                                                         <p-avatar
                                                             image="./../../assets/img/company-avatar-default.png"
                                                             size="large"
@@ -226,7 +226,7 @@
                                                             </p>
                                                           </div>
                                                       </div>
-                                                      <div class="flex-grow-1 flex flex-column">
+                                                      <div class="flex-grow-1 flex flex-column col-3 p-0">
                                                         <p class="my-0 ml-3">
                                                             {{product.usertype}}
                                                         </p>
@@ -234,7 +234,7 @@
                                                           Type
                                                         </p>
                                                       </div>
-                                                      <div class="flex-grow-1 flex flex-column">
+                                                      <div class="flex-grow-1 flex flex-column col-3 p-0">
                                                         <p class="my-0 ml-3">
                                                             {{product.usercompanyrole}}
                                                         </p>
@@ -242,7 +242,7 @@
                                                             Company position
                                                         </p>
                                                       </div>
-                                                      <div class="flex-grow-1 flex flex-column">
+                                                      <div class="flex-grow-1 flex flex-column col-3 p-0">
                                                         <p class="my-0 ml-3">
                                                             {{product.usercompanyrole}}
                                                         </p>
@@ -434,7 +434,7 @@
                                     <div class="px-4 py-3 surface-50 flex-grow-1">
                                         <p-dataView [value]="product">
                                             <ng-template let-product pTemplate="listItem">
-                                                <a class="w-full p-4 bg-white flex flex-column border-round-sm mb-2 cursor-pointer border-bottom-8 border-blue-500" (click)="visibleSidebar4 = true">
+                                                <a class="w-full p-4 bg-white flex flex-column border-round-sm mb-2 cursor-pointer border-bottom-8 border-blue-500 shadow-1" (click)="visibleSidebar4 = true">
                                                     <p class="mb-2 text-color font-medium">
                                                         {{product.description}}
                                                     </p>
@@ -468,7 +468,7 @@
                                     <div class="px-4 py-3 surface-50 flex-grow-1">
                                         <p-dataView [value]="product">
                                             <ng-template let-product pTemplate="listItem">
-                                                <div class="w-full p-4 bg-white flex flex-column border-round-sm mb-2 cursor-pointer border-bottom-8 border-blue-500">
+                                                <div class="w-full p-4 bg-white flex flex-column border-round-sm mb-2 cursor-pointer border-bottom-8 border-blue-500 shadow-1">
                                                     <p class="mb-2 text-color font-medium">
                                                         {{product.description}}
                                                     </p>

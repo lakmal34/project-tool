@@ -1,2 +1,166 @@
 @use 'sass:map';
 @import './scss/theme/theme.scss';
+
+
+
+*{
+    font-family: $fontFamily;
+}
+a{
+    cursor: pointer;
+}
+p,a,label{
+    font-family:$fontFamily;
+}
+
+.secondary-bar{
+    .p-dropdown {
+        @include styleclass('border-none');
+        .p-inputtext{
+            @include styleclass('p-0, border-none, shadow-none');
+        }
+    }
+}
+
+.topnav-bar{
+    .p-breadcrumb{
+        @include styleclass('p-0');
+    }
+}
+
+.onboardingView{
+    .onboarding-selectButton{
+        .p-selectbutton{
+            @include styleclass('flex, gap-3');
+            .p-button{
+                @include styleclass('flex, gap-3, border-2, border-solid, border-200, border-round-md, text-color-secondary, shadow-none');
+                .selectButtonIcon{
+                    display: flex;
+                }
+                .selectButtonIconActive{
+                    display: none;
+                }
+                &.p-highlight{
+                    @include styleclass('text-primary, bg-primary-100, border-primary');
+                    .selectButtonIcon{
+                        display: none;
+                    }
+                    .selectButtonIconActive{
+                        display: flex;
+                    }
+                }
+            }
+        }
+    }
+    .step-5{
+        .p-selectbutton{
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    .border-8{
+        border-width: 8px;
+    }
+}
+
+
+.registerView{
+    .passwordStrengthContainer{
+        .p-password-panel{
+            @include styleclass('shadow-none, p-0, relative, top-0, left-0, z-auto, mt-3, mb-0, text-sm');
+        }
+    }  
+}
+
+.waveBg{
+    background-image: url('../src/assets/img/wave-bg.svg');
+    @include styleclass('bg-no-repeat, bg-cover, bg-center, overflow-visible');
+}
+
+
+
+.p-sidebar{
+    .p-sidebar-header{
+        @include styleclass('p-0 fixed top-0 w-3rem h-3rem right-0 flex align-items-center justify-content-center');
+        z-index:10000;
+    }
+    .p-sidebar-content{
+        @include styleclass('p-0 h-full')
+    }
+}
+
+
+
+.contentArea{
+    .contentAreaRow{
+        width:100%;
+        height:100%;
+    }
+}
+
+.p-inplace{
+    .p-inplace-display{
+        @include styleclass('p-0 hover:bg-white shadow-none');
+    }
+}
+
+.p-dataview-content{
+    background-color: transparent !important;
+}
+
+.project-selectButton{
+    .p-selectbutton{
+        @include styleclass('flex, flex-column, shadow-none');
+        .p-button{
+            @include styleclass('flex, gap-3, border-none, border-bottom-1, border-solid, border-100, text-color-secondary, shadow-none, border-noround, h-4rem');
+            .primary-line{
+                @include styleclass('text-color');
+            }
+            .secondary-line{
+                @include styleclass('font-normal');
+           }
+            &.p-highlight{
+                @include styleclass('text-primary, bg-primary-50, border-none, border-bottom-1, border-solid, border-100,');
+                .secondary-line{
+                     @include styleclass('font-normal');
+                }
+                .primary-line{
+                    @include styleclass('text-primary');
+                }
+            }
+        }
+    }
+}
+
+
+.p-tag {
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    @include styleclass('px-4, border-round-2xl');
+
+    &.p-tag-success {
+        @include styleclass('bg-green-50, text-green-600,');
+    }
+
+    &.p-tag-info {
+        @include styleclass('bg-blue-50, text-blue-600,');
+    }
+
+    &.p-tag-warning {
+        @include styleclass('bg-orange-50, text-orange-600,');
+    }
+
+    &.p-tag-danger {
+        @include styleclass('bg-red-50, text-red-600');
+        
+    }
+}
+
+
+.p-accordion-header-link {
+    @include styleclass('bg-white,');
+}
+.p-accordion-content {
+    @include styleclass('surface-50, p-4, border-round-sm');
+}
