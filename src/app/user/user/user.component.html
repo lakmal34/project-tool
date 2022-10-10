@@ -1,10 +1,15 @@
 <div class="flex">
-    <app-sidemenu></app-sidemenu>
+
+    <!-- side bar container-->
+    <div class="h-screen hidden md:block md:w-5rem lg:w-15rem xl:w-16rem flex-shrink-0 sticky top-0">
+        <app-sidemenu></app-sidemenu>
+    </div>
+
     <div class="mainContent flex flex-grow-1 flex-column">
   
         <app-topnav></app-topnav>
 
-      <div class="contentArea flex flex-column surface-50 p-6 flex-grow-1">
+      <div class="contentArea flex flex-column surface-50 p-0 md:p-4 xl:p-6 flex-grow-1">
         <div class="flex-grow-1 bg-white">
             <div class="grid h-full m-0">
                 <div class="col-12 xl:col-3  border-none border-right-1 border-solid border-100 lg:h-full p-6">
