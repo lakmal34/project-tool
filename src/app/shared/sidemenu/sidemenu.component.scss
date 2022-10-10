@@ -5,16 +5,20 @@
         @include styleclass('mb-3');
         .p-panelmenu-header{
             .p-panelmenu-header-link{
-                @include styleclass('bg-primary border-none font-medium flex shadow-none border-round-md p-3');
+                @include styleclass('bg-primary border-none font-medium flex shadow-none border-round-md p-3 justify-content-center lg:justify-content-start');
                 .p-panelmenu-icon{
                     @include styleclass('flex-order-1');
                 }
                 .p-menuitem-text{
-                    @include styleclass('flex-grow-1');
+                    @include styleclass('hidden lg:flex flex-grow-1');
+                }
+                .p-menuitem-icon{
+                    @include styleclass('mr-0 lg:mr-2');
                 }
                 &.p-menuitem-link-active{
                     @include styleclass('bg-primary-400');
                 }
+
             }
             
             // &.p-highlight{

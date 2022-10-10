@@ -1,20 +1,22 @@
 <div class="flex">
+    <!-- side bar container-->
+  <div class="bg-primary h-screen w-5rem lg:w-15rem xl:w-16rem flex-shrink-0">
     <app-sidemenu></app-sidemenu>
+  </div>
     <div class="mainContent flex flex-grow-1 flex-column">
   
     <app-topnav></app-topnav>
 
-      <div class="contentArea flex flex-column surface-50 p-6 flex-grow-1">
+      <div class="contentArea flex flex-column surface-50 p-0 md:p-4 xl:p-6 flex-grow-1">
         <div class="flex-grow-1 bg-white">
-            <div class="grid h-full m-0">
-                <div class="col-12 xl:col-3  border-none border-right-1 border-solid border-100 lg:h-full p-0">
+            <div class="grid h-full m-0 flex-nowrap">
+                <div class="w-4rem xl:w-3 border-none border-right-1 border-solid border-100 lg:h-full p-0 flex-shrink-0">
                     <div class="grid">
                         <div class="col-12">
                             <p-selectButton [options]="companyProfile" [(ngModel)]="value3" class="project-selectButton" optionValue="value" (onChange)="frqToggle($event)">
                                 <ng-template let-item>
                                     <div class="flex flex-column align-items-start">
-                                        <p class="mt-0 mb-1 font-medium primary-line">{{item.text}}</p>
-                                        <p class="m-0 text-sm text-color-secondary secondary-line">{{item.secondary}}</p>
+                                        <p class="mt-0 mb-1 font-medium primary-line"><i class="{{item.icon}} mr-0 xl:mr-2"></i><span class="hidden xl:inline">{{item.text}}</span></p>
                                     </div>
                                 </ng-template>
                             </p-selectButton>
@@ -22,24 +24,24 @@
                     </div>
                 </div>
 
-                <div class="col-12 xl:col-9 p-6 flex-column" [ngClass]="{hidden: !step1, flex: step1}">
+                <div class="flex-grow-1 p-6  flex-column" [ngClass]="{hidden: !step1, flex: step1}">
                     <div class="flex flex-column h-full">
                         <div  class="flex-grow-1">
                             <div class="grid m-0">
-                                <div class="col-12">
-                                    <div class="flex align-items-center">
+                                <div class="col-12 mb-4 lg:mb-0">
+                                    <div class="flex flex-column lg:flex-row align-items-start lg:align-items-center">
                                         <p-avatar
                                             image="./../../assets/img/company-avatar-default.png"
                                             size="xlarge"
                                             styleClass="w-5rem h-5rem text-xl bg-primary border-round-sm"
                                         ></p-avatar>
-                                        <div class="ml-4">
+                                        <div class="ml-0 lg:ml-4 mt-3 lg:mt-0">
                                             <p class="mb-2 mt-0 text-xl text-color font-semibold">Miller Accountigs Pvt Ltd</p>
                                             <p-tag severity="success">Preliminary</p-tag>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 xl:col-3 mb-4">
+                                <div class="col-12 xl:col-4 mb-4">
                                     <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0">
                                         <ng-template pTemplate="display" class="flex w-100 hover:bg-white p-0">
                                             <p class="text-base font-medium mb-0 mt-0 text-color-secondary">Company Name</p>
@@ -51,7 +53,7 @@
                                         </ng-template>
                                     </p-inplace>
                                 </div>
-                                <div class="col-12 xl:col-3 mb-4">
+                                <div class="col-12 xl:col-4 mb-4">
                                     <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0">
                                         <ng-template pTemplate="display" class="flex w-100 hover:bg-white p-0">
                                             <p class="text-base font-medium mb-0 mt-0 text-color-secondary">Industry</p>
@@ -63,7 +65,7 @@
                                         </ng-template>
                                     </p-inplace>
                                 </div>
-                                <div class="col-12 xl:col-3 mb-4">
+                                <div class="col-12 xl:col-4 mb-4">
                                     <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0">
                                         <ng-template pTemplate="display" class="flex w-100 hover:bg-white p-0">
                                             <p class="text-base font-medium mb-0 mt-0 text-color-secondary">Company Registration</p>
@@ -75,7 +77,7 @@
                                         </ng-template>
                                     </p-inplace>
                                 </div>
-                                <div class="col-12 xl:col-3 mb-4">
+                                <div class="col-12 xl:col-4 mb-4">
                                     <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0">
                                         <ng-template pTemplate="display" class="flex w-100 hover:bg-white p-0">
                                             <p class="text-base font-medium mb-0 mt-0 text-color-secondary">Company Address</p>
@@ -87,7 +89,7 @@
                                         </ng-template>
                                     </p-inplace>
                                 </div>
-                                <div class="col-12 xl:col-3 mb-4">
+                                <div class="col-12 xl:col-4 mb-4">
                                     <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0">
                                         <ng-template pTemplate="display" class="flex w-100 hover:bg-white p-0">
                                             <p class="text-base font-medium mb-0 mt-0 text-color-secondary">Company Email</p>
@@ -99,7 +101,7 @@
                                         </ng-template>
                                     </p-inplace>
                                 </div>
-                                <div class="col-12 xl:col-3 mb-4">
+                                <div class="col-12 xl:col-4 mb-4">
                                     <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0">
                                         <ng-template pTemplate="display" class="flex w-100 hover:bg-white p-0">
                                             <p class="text-base font-medium mb-0 mt-0 text-color-secondary">Select Company Type</p>
@@ -124,7 +126,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 xl:col-9 flex-column p-0" [ngClass]="{hidden: !step2, flex: step2}">
+                <div class="flex-grow-1 p-0  flex-column" [ngClass]="{hidden: !step2, flex: step2}">
                     <div class="flex flex-column h-full bg-white">
                         <div class="flex-grow-1">
                             <div class="grid m-0">

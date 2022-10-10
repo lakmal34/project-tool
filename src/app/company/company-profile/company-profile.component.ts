@@ -7,6 +7,7 @@ interface CompanyProfile{
   text:string,
   secondary:string,
   value:string,
+  icon:string,
   code:number
 }
 
@@ -32,8 +33,8 @@ export class CompanyProfileComponent implements OnInit {
 
   constructor(private productService: ProductService) {
     this.companyProfile = [
-      { text: 'Company Details', secondary:'General company details', value:'on', code:1 },
-      { text: 'Company Resources', secondary:'Company resource files',value:'2', code:2 }
+      { text: 'Company Details', secondary:'General company details', value:'on', icon:'pi pi-fw pi-th-large', code:1 },
+      { text: 'Company Resources', secondary:'Company resource files',value:'2', icon:'pi pi-fw pi-th-large', code:2 }
     ];
    }
 

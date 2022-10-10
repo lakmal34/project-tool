@@ -1,12 +1,18 @@
 <div class="flex">
-  <app-sidemenu></app-sidemenu>
-    <div class="mainContent flex flex-grow-1 flex-column">
-  
+
+  <!-- side bar container-->
+  <div class="bg-primary h-screen w-5rem lg:w-15rem xl:w-16rem flex-shrink-0">
+    <app-sidemenu></app-sidemenu>
+  </div>
+
+  <div class="mainContent flex flex-grow-1 flex-column">
+
       <app-topnav></app-topnav>
+
       <div class="bg-white secondary-bar border-none border-bottom-1 border-solid border-200 px-4 flex align-items-center justify-content-between">
-        <div class="flex align-items-center gap-1">
-          <p-dropdown [options]="clients"  optionLabel="name" optionValue="code" class="send-methods mr-6 hidden md:flex" dataKey="code" styleClass="text-sm siteSwitcherDropdown"></p-dropdown>
-          <p-dropdown [options]="progress" optionLabel="name" optionValue="code" class="send-methods mr-6 hidden md:flex" dataKey="code" styleClass="text-sm siteSwitcherDropdown"></p-dropdown>
+        <div class="flex align-items-center gap-1 flex">
+          <p-dropdown [options]="clients"  optionLabel="name" optionValue="code" dataKey="code" styleClass="text-sm siteSwitcherDropdown"></p-dropdown>
+          <p-dropdown [options]="progress" optionLabel="name" optionValue="code" dataKey="code" styleClass="text-sm siteSwitcherDropdown"></p-dropdown>
         </div>
         <div class="flex align-items-center gap-2 py-2">
           <button pButton icon="pi pi-plus-circle" type="button" label="New Project" class="p-button-text p-button-sm" styleClass="p-button-sm" (click)="visibleSidebar2 = true"></button>
@@ -16,14 +22,14 @@
       <div class="contentArea flex flex-column surface-50 p-4 flex-grow-1">
         <div class="flex-grow-1">
             <div class="grid h-full m-0">
-                <div class="col-12 lg:h-full">
+                <div class="col-12 lg:h-full p-0">
                     
                   <p-dataView [value]="product">
                     <ng-template let-product pTemplate="listItem">
 
-                        <div class="w-full p-4 bg-white flex border-round-sm mb-2 cursor-pointer shadow-1" routerLink="/projectProfile" routerLinkActive="active">
+                        <div class="w-full p-4 bg-white flex flex-column md:flex-row border-round-sm mb-2 cursor-pointer shadow-1" routerLink="/projectProfile" routerLinkActive="active">
 
-                          <div class="col-3 p-0  flex align-items-start">
+                          <div class="col-12 md:col-4 p-0 md:px-3  flex align-items-center md:align-items-start mb-3 md:mb-0">
                             <p-avatar
                                 image="./../../assets/img/company-avatar-default.png"
                                 size="large"
@@ -33,31 +39,31 @@
                               Project Zest
                             </p>
                           </div>
-                          <div class="col-2 p-0  flex flex-column">
-                            <p class="my-0 ml-3">
+                          <div class="col-12 md:col-2 p-0 md:px-3  flex flex-column mb-3 md:mb-0">
+                            <p class="my-0">
                               Dialogg
                             </p>
-                            <p class="my-0 ml-3 text-sm text-color-secondary">
+                            <p class="my-0 text-sm text-color-secondary">
                               Client
                             </p>
                           </div>
-                          <div class="col-3 p-0  flex flex-column">
-                            <p class="my-0 ml-3">
+                          <div class="col-12 md:col-2 p-0 md:px-3  flex flex-column mb-3 md:mb-0">
+                            <p class="my-0">
                               June 2022 - June 2023
                             </p>
-                            <p class="my-0 ml-3 text-sm text-color-secondary">
+                            <p class="my-0 text-sm text-color-secondary">
                               Project period
                             </p>
                           </div>
-                          <div class="col-2 p-0  flex flex-column">
-                            <p class="my-0 ml-3">
+                          <div class="col-12 md:col-2 p-0 md:px-3  flex flex-column mb-3 md:mb-0">
+                            <p class="my-0">
                               15th June 2023
                             </p>
-                            <p class="my-0 ml-3 text-sm text-color-secondary">
+                            <p class="my-0 text-sm text-color-secondary">
                               Completion date
                             </p>
                           </div>
-                          <div class="col-2 p-0  flex">
+                          <div class="col-12 md:col-2 p-0 md:px-3  flex mb-3 md:mb-0">
                             <p-tag styleClass="p-mr-2 text-sm bg-green-100 text-green-500 font-normal px-3" value="Preliminary"></p-tag>
                           </div>
 

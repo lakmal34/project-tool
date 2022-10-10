@@ -113,7 +113,7 @@ p,a,label{
     .p-selectbutton{
         @include styleclass('flex, flex-column, shadow-none');
         .p-button{
-            @include styleclass('flex, gap-3, border-none, border-bottom-1, border-solid, border-100, text-color-secondary, shadow-none, border-noround, h-4rem');
+            @include styleclass('flex, align-items-center, justify-content-center, align-items-center, xl:justify-content-start, gap-3, border-none, border-bottom-1, border-solid, border-100, text-color-secondary, shadow-none, border-noround, h-4rem');
             .primary-line{
                 @include styleclass('text-color');
             }

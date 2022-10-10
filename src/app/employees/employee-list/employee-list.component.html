@@ -1,12 +1,15 @@
 <div class="flex">
-    <app-sidemenu></app-sidemenu>
+    <!-- side bar container-->
+    <div class="bg-primary h-screen w-5rem lg:w-15rem xl:w-16rem flex-shrink-0">
+      <app-sidemenu></app-sidemenu>
+    </div>
     <div class="mainContent flex flex-grow-1 flex-column">
   
       <app-topnav></app-topnav>
       <div class="secondary-bar bg-white border-none border-bottom-1 border-solid border-200 px-4 flex align-items-center justify-content-between">
         <div class="flex align-items-center gap-1">
-          <p-dropdown [options]="clients"  optionLabel="name" optionValue="code" class="send-methods mr-6 hidden md:flex" dataKey="code" styleClass="text-sm siteSwitcherDropdown"></p-dropdown>
-          <p-dropdown [options]="progress" optionLabel="name" optionValue="code" class="send-methods mr-6 hidden md:flex" dataKey="code" styleClass="text-sm siteSwitcherDropdown"></p-dropdown>
+          <p-dropdown [options]="clients"  optionLabel="name" optionValue="code" dataKey="code" styleClass="text-sm siteSwitcherDropdown"></p-dropdown>
+          <p-dropdown [options]="progress" optionLabel="name" optionValue="code" dataKey="code" styleClass="text-sm siteSwitcherDropdown"></p-dropdown>
         </div>
         <div class="flex align-items-center gap-2 py-2">
           <button pButton icon="pi pi-plus-circle" type="button" label="New Employee" class="p-button-text p-button-sm" styleClass="p-button-sm" (click)="visibleSidebar2 = true"></button>
@@ -16,13 +19,13 @@
       <div class="contentArea flex flex-column surface-50 p-4 flex-grow-1">
         <div class="flex-grow-1">
             <div class="grid h-full m-0">
-                <div class="col-12 lg:h-full">
+                <div class="col-12 lg:h-full p-0">
                     
                   <p-dataView [value]="product">
                     <ng-template let-product pTemplate="listItem">
-                        <div class="w-full p-4 bg-white flex border-round-sm mb-2 cursor-pointer shadow-1">
+                        <div class="w-full p-4 bg-white flex flex-column md:flex-row border-round-sm mb-2 cursor-pointer shadow-1">
 
-                          <div class="col-6 p-0 flex align-items-center">
+                          <div class="col-12 md:col-6 p-0 md:px-3  flex align-items-center mb-3 md:mb-0">
                             <p-avatar
                                 label="AB"
                                 size="large"
@@ -32,7 +35,7 @@
                               {{product.user}}
                             </p>
                           </div>
-                          <div class="col-6 p-0  flex align-items-center">
+                          <div class="col-12 md:col-6 p-0 md:px-3  flex flex-column mb-3 md:mb-0">
                             <p-tag styleClass="p-mr-2 text-sm bg-green-100 text-green-500 font-normal px-3" value="Preliminary"></p-tag>
                           </div>
 

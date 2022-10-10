@@ -17,6 +17,7 @@ interface ProjectProfile{
   text:string,
   secondary:string,
   value:string,
+  icon:string,
   code:number
 }
 
@@ -65,11 +66,11 @@ export class ProjectProfileComponent implements OnInit {
 
   constructor(private productService: ProductService) { 
     this.projectProfile = [
-      { text: 'Project Details', secondary:'General project details', value:'on', code:1 },
-      { text: 'Users', secondary:'General project details',value:'2', code:2 },
-      { text: 'Assign Tasks ', secondary:'Assign tasks to project', value:'3', code:3 },
-      { text: 'Task Board', secondary:'View project board', value:'4', code:4 },
-      { text: 'Resources', secondary:'Add project resources',value:'5', code:5 }
+      { text: 'Project Details', secondary:'General project details', icon:'pi pi-fw pi-th-large', value:'on', code:1 },
+      { text: 'Users', secondary:'General project details',icon:'pi pi-fw pi-th-large', value:'2', code:2 },
+      { text: 'Assign Tasks ', secondary:'Assign tasks to project', icon:'pi pi-fw pi-th-large', value:'3', code:3 },
+      { text: 'Task Board', secondary:'View project board', icon:'pi pi-fw pi-th-large', value:'4', code:4 },
+      { text: 'Resources', secondary:'Add project resources', icon:'pi pi-fw pi-th-large', value:'5', code:5 }
     ];
     this.clients = [
       {name: 'Grady, Kuhic and Sauer', code: 'DL'},
