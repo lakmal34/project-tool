@@ -1,1 +1,5 @@
+<!-- <a (click)="switchTheme('pm-dark.')" class="cursor-pointer fixed" style="z-index:99;">BSB Dark</a> -->
+
+<button pButton pRipple type="button" icon="ri-moon-fill" class="p-button-rounded p-button-secondary fixed" styleClass="p-button-sm" (click)="switchTheme('pm-dark.'); dark=!dark " [ngClass]="{hidden: dark, flex: !dark}" style="z-index:99; right: 16px; top: 16px; width: 2rem; height: 2rem;"></button>
+<button pButton pRipple type="button" icon="ri-sun-fill" class="p-button-rounded fixed" styleClass="p-button-sm" (click)="switchTheme('pm-light.'); dark=!dark " [ngClass]="{hidden: !dark, flex: dark}" style="z-index:99; right: 16px; top: 16px; width: 2rem; height: 2rem;"></button>
 <router-outlet></router-outlet>

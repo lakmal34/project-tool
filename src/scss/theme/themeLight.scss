@@ -1,0 +1,29 @@
+$sm: 576px !default;
+$md: 768px !default;
+$lg: 992px !default;
+$xl: 1200px !default;
+$xxl:1440px !default;
+
+$breakpoints: (
+    'sm': $sm,
+    'md': $md,
+    'lg': $lg,
+    'xl': $xl,
+    'xxl':$xxl
+) !default;
+
+@import '../../../node_modules/primeflex/primeflex.scss';
+@import './variablesLight';
+@import './_fonts';
+@import '../designer/mixins';
+@import '../designer/components';
+@import './_extensions';
+@import '../custom/sidemenu';
+@import '../common.scss';
+
+
+
+
+
+
+

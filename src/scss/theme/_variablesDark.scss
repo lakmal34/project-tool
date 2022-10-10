@@ -3,8 +3,6 @@ $primaryDarkColor: #1d4ed8;
 $primaryDarkerColor: #1e3a8a;
 $primaryTextColor: #ffffff;
 
-$highlightBg: #dbeafe;
-$highlightTextColor: #3b82f6;
 
 /* Custom variables we need */
 $primary: $primaryColor;
@@ -22,8 +20,8 @@ $warningDark:#F97316;
 $dangerDark:#EF4444; 
 $helpDark:#6366F1; 
 
-/*for severities message background*/
-$primaryLight: #eff6ff !default;
+/*for light tints*/
+$primaryLight: #60a5fa;
 $successLight:#22C55E; 
 $infoLight:#06B6D4;
 $warningLight:#F97316;
@@ -36,6 +34,8 @@ $yellow: #EAB308;
 $pink: #EC4899;
 $teal: #14B8A6;
 $purple: #A855F7;
+
+
 
 $colors: (
     "primary": $primaryColor,
@@ -53,30 +53,33 @@ $colors: (
 );
 
 //reused color variables
-$shade000:#ffffff !default;    //surface
-$shade100:#f8fafc !default;    //header background,$imagePreviewIndicatorColor $imagePreviewActionIconColor $imagePreviewActionIconHoverColor //updated: gray-50
-$shade200:#f1f5f9 !default;    //hover background       //updated: gray-100
-$shade300:#e2e8f0 !default;    //border, divider        //updated  coolgray-200
-$shade400:#cbd5e1 !default;    //input border           //updated: gray-300
-$shade500:#94a3b8 !default;    //input icon             //updated: coolgray500
-$shade600:#64748b !default;    //text secondary color   //updated: gray-500
-$shade700:#010101 !default;    
-$shade800:#334155 !default;    //unused                 gray-800
-$shade900:#1e293b !default;    //text color             //updated: gray-700
+$shade900:#ffffff !default;    //surface
+$shade800:#f8fafc !default;    //header background,$imagePreviewIndicatorColor $imagePreviewActionIconColor $imagePreviewActionIconHoverColor //updated: gray-50
+$shade700:#f1f5f9 !default;    //hover background       //updated: gray-100
+$shade600:#e2e8f0 !default;    //border, divider        //updated  coolgray-200
+$shade500:#cbd5e1 !default;    //input border           //updated: gray-300
+$shade400:#94a3b8 !default;    //input icon             //updated: coolgray500
+$shade300:#64748b !default;    //text secondary color   //updated: gray-500
+$shade200:#010101 !default;    
+$shade100:#334155 !default;    //unused                 gray-800
+$shade000:#1e293b !default;    //text color             //updated: gray-700
+
+$highlightBg: #1e40af !default;
+$highlightTextColor: $shade800 !default;
 
 //additional variables to use in surface colors (using primeng surface colors)
-$gray050:#FAFAFA !default;    
-$gray100:#F4F4F5 !default;    
-$gray200:#E4E4E7 !default;    
-$gray300:#D4D4D8 !default;    
-$gray400:#A1A1AA !default;    
-$gray500:#71717A !default;    
-$gray600:#52525B !default;    
-$gray700:#3F3F46 !default;    
-$gray800:#27272A !default;    
-$gray900:#18181B !default; 
+$gray900:#FAFAFA !default;    
+$gray800:#F4F4F5 !default;    
+$gray700:#E4E4E7 !default;    
+$gray600:#D4D4D8 !default;    
+$gray500:#A1A1AA !default;    
+$gray400:#71717A !default;    
+$gray300:#52525B !default;    
+$gray200:#3F3F46 !default;    
+$gray100:#27272A !default;    
+$gray050:#18181B !default; 
 
-$surface000:#ffffff !default;   
+$surface000:#000000 !default;   
 $surface050:$gray050 !default;    
 $surface100:$gray100 !default;    
 $surface200:$gray200 !default;    
@@ -86,7 +89,40 @@ $surface500:$gray500 !default;
 $surface600:$gray600 !default;    
 $surface700:$gray700 !default;    
 $surface800:$gray800 !default;    
-$surface900:$gray900 !default;  
+$surface900:$gray900 !default; 
+
+/*custom - sidemenu color */
+$sidemenuBg:$surface000;
+$sidemenuitemLinkActive:$surface400;
+$sidemenuText:$shade900;
+$sidemenuTextSecondary:$shade500;
+
+//only for dark mode
+@mixin color-class($name, $prop, $colors, $shades) {
+    @each $color in $colors {
+        .#{$prefix}#{$name}#{$color} {
+            @each $shade in $shades {
+			  @if $shade == 50{
+			  	&-#{50} {
+                    #{$prop}: var(--#{$color}-#{900}) !important;
+                }
+			  }
+			  @else{
+				$newshade:($shade - 900)*(-1); 
+				&-#{$shade} {
+                    #{$prop}: var(--#{$color}-#{$newshade}) !important;
+                }
+			  }
+                
+            }
+        } 
+    }
+}
+$themeColors: 'blue', 'green', 'yellow', 'cyan', 'pink', 'indigo', 'teal', 'orange', 'bluegray', 'purple', 'gray', 'red', 'primary' !default;
+$surfaceShades: 0, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900;
+@include color-class('bg-', 'background-color', $themeColors, $colorShades);
+@include color-class('text-', 'color', $themeColors, $colorShades);
+@include color-class('border-', 'border-color', $themeColors, $colorShades);
 
 
 //global
@@ -132,7 +168,7 @@ $actionIconBorderRadius:50% !default;
 //input field (e.g. inputtext, spinner, inputmask)
 $inputPadding:.75rem .75rem !default;
 $inputTextFontSize:1rem !default;
-$inputBg:$shade000 !default;
+$inputBg:$surface000 !default;
 $inputTextColor:$shade700 !default;
 $inputIconColor:$shade600 !default;
 $inputBorder:1px solid $shade400 !default;
@@ -703,7 +739,7 @@ $progressBarValueTextColor:$primaryTextColor !default;
 
 //menu (e.g. menu, menubar, tieredmenu)
 $menuWidth:12.5rem !default;
-$menuBg:$shade000 !default;
+$menuBg:$surface000 !default;
 $menuBorder:1px solid $shade300 !default;
 $menuTextColor:$shade700 !default;
 $menuitemPadding:.75rem 1rem !default;
@@ -935,8 +971,7 @@ $imagePreviewActionIconBorderRadius:50% !default;
     --maskbg: #{$maskBg};
 }
 
-
-$space-scales:0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 2, 2.25, 2.5, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,19,20,21 !global; 
+$space-scales:0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,19,20,21 !global; 
 $padding-properties: (
     '': 'padding',
     't': 'padding-top',
@@ -980,35 +1015,33 @@ $width-properties: size-map((
     'w-9': 75%,
     'w-10': 83.3333%,
     'w-11': 91.6667%,
-    'w-12': 100%,
-    'w-40rem':40rem,
+    'w-12': 100%
 ), 'w');
 
-$border-scales:0px, 1px, 2px, 3px, 4px, 5px, 6px, 7px, 8px;
-
-$border-directions: (
-    '': 'border',
-    'top': 'border-top',
-    'right': 'border-right',
-    'left': 'border-left',
-    'bottom': 'border-bottom',
-    'x': ('border-left','border-right'),
-    'y': ('border-top','border-bottom')
-);
-
-$border-styles: (
-    'border-solid': solid,
-    'border-dashed': dashed,
-    'border-dotted': dotted,
-    'border-double': double
-);
-
-@include border-class('border', $border-directions, $border-scales);
-@include style-class('border-style', $border-styles, true);
 @include style-class('width', $width-properties, true);
 @include style-class('max-width', $max-width-properties, true);
 @include spacing-class('p', $padding-properties, $space-scales);
 @include spacing-class('m', $margin-properties, $space-scales, true, true, true);
+
+//only for dark mode
+$custom-properties: (
+    'text-primary': ('color': $primaryColor),
+    'bg-primary': ('color': $primaryTextColor, 'background-color': $primaryColor),
+    'bg-primary-reverse': ('color':$primaryColor , 'background-color': $surface000),
+    'bg-white': ('background-color': $surface000),
+    'border-primary': ('border-color': $primaryColor),
+    'text-white': ('color': $shade000),
+    'border-white': ('border-color': $surface000),
+    'text-color': ('color': $textColor),
+    'text-color-secondary': ('color': $textSecondaryColor),
+    'surface-ground': ('background-color': $surface050),
+    'surface-section': ('background-color': $surface000),
+    'surface-card': ('background-color': $surface000),
+    'surface-overlay': ('background-color': $surface000),
+    'surface-hover': ('background-color': $surface100),
+    'surface-border': ('border-color': $surface100)
+);
+@include generate-class($custom-properties, true, true);
 
 
 

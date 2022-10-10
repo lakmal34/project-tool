@@ -43,25 +43,25 @@
                                     </div>
                                 </div>
                                 <div class="col-12 xl:col-4 mb-4">
-                                    <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0">
+                                    <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0" [preventClick]="true">
                                         <ng-template pTemplate="display" class="flex w-100 hover:bg-white p-0">
-                                            <p class="text-base font-medium mb-0 mt-0 text-color-secondary">Client</p>
+                                            <p class="text-base font-medium mb-2 mt-0 text-color-secondary">Client</p>
                                             <p class="text-base font-medium mb-0 mt-0 text-color">Grady, Kuhic and Sauer</p>
                                         </ng-template>
                                         <ng-template pTemplate="content" class="flex flex-column">
-                                            <label class="block mb-2">Select Client</label>
+                                            <label class="block mb-2 text-color">Select Client</label>
                                             <p-dropdown [options]="clients" [(ngModel)]="selectedClient" optionLabel="name" class="w-full" styleClass="w-full"></p-dropdown>
                                         </ng-template>
                                     </p-inplace>
                                 </div>
                                 <div class="col-12 xl:col-4 mb-4">
-                                    <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0">
+                                    <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0" [preventClick]="true">
                                         <ng-template pTemplate="display" class="flex w-100 hover:bg-white p-0">
-                                            <p class="text-base font-medium mb-0 mt-0 text-color-secondary">Project Name</p>
+                                            <p class="text-base font-medium mb-2 mt-0 text-color-secondary">Project Name</p>
                                             <p class="text-base font-medium mb-0 mt-0 text-color">Project Zest</p>
                                         </ng-template>
                                         <ng-template pTemplate="content" class="flex flex-column">
-                                            <label class="block mb-2">Project Name</label>
+                                            <label class="block mb-2 text-color">Project Name</label>
                                             <input type="text" value="Project Zest" pInputText class="w-full">
                                         </ng-template>
                                     </p-inplace>
@@ -71,11 +71,11 @@
                                 <div class="col-12 xl:col-12 mb-4">
                                     <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0">
                                         <ng-template pTemplate="display" class="flex w-100 hover:bg-white p-0">
-                                            <p class="text-base font-medium mb-0 mt-0 text-color-secondary">Project Description</p>
+                                            <p class="text-base font-medium mb-2 mt-0 text-color-secondary">Project Description</p>
                                             <p class="text-base font-medium mb-0 mt-0 text-color">Financial management for the Investment to Zest project </p>
                                         </ng-template>
                                         <ng-template pTemplate="content" class="flex flex-column">
-                                            <label class="block mb-2">Project Description</label>
+                                            <label class="block mb-2 text-color">Project Description</label>
                                             <textarea pInputTextarea class="w-full"></textarea>
                                         </ng-template>
                                     </p-inplace>
@@ -83,37 +83,37 @@
                             </div>
                             <div class="grid m-0">
                                 <div class="col-12 xl:col-4 mb-4">
-                                    <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0">
+                                    <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0" [preventClick]="true">
                                         <ng-template pTemplate="display" class="flex w-100 hover:bg-white p-0">
-                                            <p class="text-base font-medium mb-0 mt-0 text-color-secondary">Project Period</p>
+                                            <p class="text-base font-medium mb-2 mt-0 text-color-secondary">Project Period</p>
                                             <p class="text-base font-medium mb-0 mt-0 text-color">June 2022 - June 2023</p>
                                         </ng-template>
                                         <ng-template pTemplate="content" class="flex flex-column">
-                                            <label class="block mb-2">Project Period</label>
+                                            <label class="block mb-2 text-color">Project Period</label>
                                             <p-calendar [(ngModel)]="dateValue" view="year" dateFormat="yy" class="w-full" styleClass="w-full"></p-calendar>
                                         </ng-template>
                                     </p-inplace>
                                 </div>
                                 <div class="col-12 xl:col-4 mb-4">
-                                    <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0">
+                                    <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0" [preventClick]="true">
                                         <ng-template pTemplate="display" class="flex w-100 hover:bg-white p-0">
-                                            <p class="text-base font-medium mb-0 mt-0 text-color-secondary">Completion Date</p>
+                                            <p class="text-base font-medium mb-2 mt-0 text-color-secondary">Completion Date</p>
                                             <p class="text-base font-medium mb-0 mt-0 text-color">15th June 2023</p>
                                         </ng-template>
                                         <ng-template pTemplate="content" class="flex flex-column">
-                                            <label class="block mb-2">Completion Date</label>
+                                            <label class="block mb-2 text-color">Completion Date</label>
                                             <p-calendar [(ngModel)]="dateValue" class="w-full" styleClass="w-full"></p-calendar>
                                         </ng-template>
                                     </p-inplace>
                                 </div>
                                 <div class="col-12 xl:col-4 mb-4">
-                                    <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0">
+                                    <p-inplace class="flex-grow-1 p-0" styleClass="flex flex-column hover:bg-white p-0" [preventClick]="true">
                                         <ng-template pTemplate="display" class="flex w-100 hover:bg-white p-0">
-                                            <p class="text-base font-medium mb-0 mt-0 text-color-secondary">Project Status</p>
+                                            <p class="text-base font-medium mb-2 mt-0 text-color-secondary">Project Status</p>
                                             <p class="text-base font-medium mb-0 mt-0 text-color">Preliminary</p>
                                         </ng-template>
                                         <ng-template pTemplate="content" class="flex flex-column">
-                                            <label class="block mb-2">Project Status</label>
+                                            <label class="block mb-2 text-color">Project Status</label>
                                             <p-dropdown [options]="projectStatus" [(ngModel)]="selectedProject" optionLabel="name" class="w-full" styleClass="w-full"></p-dropdown>
                                         </ng-template>
                                     </p-inplace>

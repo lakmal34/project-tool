@@ -1,0 +1,59 @@
+.sideMenu{
+    background-color: $sidemenuBg;
+    .p-panelmenu-panel {
+        @include styleclass('mb-3');
+        .p-panelmenu-header{
+            .p-panelmenu-header-link{
+                background: $sidemenuBg !important;
+                @include styleclass('border-none font-medium flex shadow-none border-round-md p-3 justify-content-center lg:justify-content-start');
+                .p-panelmenu-icon{
+                    @include styleclass('flex-order-1');
+                    color:$sidemenuTextSecondary !important;
+                }
+                .p-menuitem-text{
+                    @include styleclass('hidden lg:flex flex-grow-1');
+                    color:$sidemenuTextSecondary !important;
+                }
+                .p-menuitem-icon{
+                    @include styleclass('mr-0 lg:mr-2');
+                    color:$sidemenuTextSecondary !important;
+                }
+                &.p-menuitem-link-active{
+                    background: $sidemenuitemLinkActive !important;
+                    .p-panelmenu-icon{
+                        @include styleclass('flex-order-1');
+                        color:$sidemenuText !important;
+                    }
+                    .p-menuitem-text{
+                        @include styleclass('hidden lg:flex flex-grow-1');
+                        color:$sidemenuText !important;
+                    }
+                    .p-menuitem-icon{
+                        @include styleclass('mr-0 lg:mr-2');
+                        color:$sidemenuText !important;
+                    }
+                }
+
+            }
+        }
+        .p-panelmenu-content{
+            background-color: $sidemenuBg;
+            @include styleclass('mt-2 p-0 border-none');
+            .p-submenu-list{
+                .p-menuitem{
+                    @include styleclass('mb-2');
+                    .p-menuitem-link{
+                        @include styleclass('px-9 border-round-md shadow-none');
+                        &:hover{
+                            background: $sidemenuitemLinkActive !important;
+                        }
+                        .p-menuitem-text{
+                            color:$sidemenuText !important;
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+}
