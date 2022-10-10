@@ -23,25 +23,25 @@ export class SidemenuComponent implements OnInit {
       },
       {
         label: 'Clients',
-        icon:'pi pi-fw pi-th-large',
+        icon:'pi pi-fw pi-users',
         routerLink: '/clientlist',
         routerLinkActiveOptions:'active'
       },
       {
         label: 'Employees',
-        icon:'pi pi-fw pi-th-large',
+        icon:'pi pi-fw pi-id-card',
         routerLink: '/employeelist',
         routerLinkActiveOptions:'active'
       },
       {
         label: 'Company',
-        icon:'pi pi-fw pi-th-large',
+        icon:'pi pi-fw pi-building',
         routerLink: '/companyprofile',
         routerLinkActiveOptions:'active'
       },
       {
         label: 'Templates',
-        icon:'pi pi-fw pi-th-large',
+        icon:'pi pi-fw pi-folder',
         routerLink: '/templatelist',
         routerLinkActiveOptions:'active'
       },

@@ -25,7 +25,7 @@
                 <p class="mt-0 mb-7 text-2xl font-semibold">What is your company type?</p>
             </div>
             <div class="flex">
-                <p-selectButton [options]="companyType" [(ngModel)]="value3" class="onboarding-selectButton">
+                <p-selectButton [options]="companyType" [(ngModel)]="value3" class="onboarding-selectButton" styleClass="flex-column md:flex-row">
                     <ng-template let-item>
                         <div class="flex flex-column align-items-center justify-content-center py-6 w-15rem">
                             <div class="w-4rem h-4rem bg-no-repeat bg-cover bg-center selectButtonIcon" style="background-image:url({{item.img}});"></div>
@@ -64,7 +64,7 @@
                 <p class="mt-0 mb-7 text-2xl font-semibold">How large is your company?</p>
             </div>
             <div class="flex">
-                <p-selectButton [options]="companySize" [(ngModel)]="value3" class="onboarding-selectButton">
+                <p-selectButton [options]="companySize" [(ngModel)]="value3" class="onboarding-selectButton" styleClass="flex-wrap shadow-none align-items-center justify-content-center">
                     <ng-template let-item>
                         <div class="flex flex-column align-items-center justify-content-center">
                             <p class="m-0 font-semibold">{{item.text}}</p>
@@ -83,7 +83,7 @@
                 <p class="mt-0 mb-7 text-2xl font-semibold">What is your industry?</p>
             </div>
             <div class="flex w-full lg:w-40rem">
-                <p-selectButton [options]="companyDomain" [(ngModel)]="value3" class="onboarding-selectButton">
+                <p-selectButton [options]="companyDomain" [(ngModel)]="value3" class="onboarding-selectButton" styleClass="flex-wrap shadow-none align-items-center justify-content-center">
                     <ng-template let-item>
                         <div class="flex flex-column align-items-center justify-content-center">
                             <p class="m-0 font-semibold">{{item.text}}</p>
