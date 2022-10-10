@@ -1,8 +1,14 @@
 <nav class="topnav-bar bg-white border-bottom-1 surface-border h-4rem px-4 flex align-items-center justify-content-between sticky top-0 w-full">
     <div class="navbar-left flex align-items-center gap-2">
-      <!-- <p-breadcrumb [model]="items"></p-breadcrumb> -->
+      <img class="md:hidden cursor-pointer" src="../../../assets/img/logo-compact.svg" (click)="visibleSidebar2 = true"/>
       <p-breadcrumb [model]="menuItems" [home]="home" class="border-none" styleClass="border-none focus\:shadow-none:focus "></p-breadcrumb>
     </div>
     <div class="navbar-right">
     </div>
 </nav>
+
+
+
+<p-sidebar [(visible)]="visibleSidebar2" position="left" [baseZIndex]="10000" class="flex flex-column lg:w-30rem" styleClass="flex flex-column flex-1 lg:w-30rem">
+  <app-sidemenu></app-sidemenu>
+</p-sidebar>

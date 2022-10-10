@@ -1,59 +1,143 @@
-.sideMenu{
-    background-color: $sidemenuBg;
-    .p-panelmenu-panel {
-        @include styleclass('mb-3');
-        .p-panelmenu-header{
-            .p-panelmenu-header-link{
-                background: $sidemenuBg !important;
-                @include styleclass('border-none font-medium flex shadow-none border-round-md p-3 justify-content-center lg:justify-content-start');
-                .p-panelmenu-icon{
-                    @include styleclass('flex-order-1');
-                    color:$sidemenuTextSecondary !important;
-                }
-                .p-menuitem-text{
-                    @include styleclass('hidden lg:flex flex-grow-1');
-                    color:$sidemenuTextSecondary !important;
-                }
-                .p-menuitem-icon{
-                    @include styleclass('mr-0 lg:mr-2');
-                    color:$sidemenuTextSecondary !important;
-                }
-                &.p-menuitem-link-active{
-                    background: $sidemenuitemLinkActive !important;
-                    .p-panelmenu-icon{
-                        @include styleclass('flex-order-1');
-                        color:$sidemenuText !important;
-                    }
-                    .p-menuitem-text{
-                        @include styleclass('hidden lg:flex flex-grow-1');
-                        color:$sidemenuText !important;
-                    }
-                    .p-menuitem-icon{
-                        @include styleclass('mr-0 lg:mr-2');
-                        color:$sidemenuText !important;
-                    }
-                }
-
+.p-sidebar{
+    .sideMenu{
+        background-color: $sidemenuBg;
+        @include styleclass('h-screen border-none block w-auto');
+        .sidemenu-brand{
+            @include styleclass('w-full h-4rem px-4 flex align-items-center justify-content-start');
+            .brand-full{
+                @include styleclass('block');
+            }
+            .brand-compact{
+                @include styleclass('hidden');
             }
         }
-        .p-panelmenu-content{
-            background-color: $sidemenuBg;
-            @include styleclass('mt-2 p-0 border-none');
-            .p-submenu-list{
-                .p-menuitem{
-                    @include styleclass('mb-2');
-                    .p-menuitem-link{
-                        @include styleclass('px-9 border-round-md shadow-none');
-                        &:hover{
-                            background: $sidemenuitemLinkActive !important;
-                        }
-                        .p-menuitem-text{
+        .p-panelmenu-panel {
+            @include styleclass('mb-3');
+            .p-panelmenu-header{
+                .p-panelmenu-header-link{
+                    background: $sidemenuBg !important;
+                    @include styleclass('border-none font-medium flex shadow-none border-round-md p-3 justify-content-center lg:justify-content-start');
+                    .p-panelmenu-icon{
+                        @include styleclass('flex-order-1');
+                        color:$sidemenuTextSecondary !important;
+                    }
+                    .p-menuitem-text{
+                        @include styleclass('flex flex-grow-1');
+                        color:$sidemenuTextSecondary !important;
+                    }
+                    .p-menuitem-icon{
+                        @include styleclass('mr-2');
+                        color:$sidemenuTextSecondary !important;
+                    }
+                    &.p-menuitem-link-active{
+                        background: $sidemenuitemLinkActive !important;
+                        .p-panelmenu-icon{
+                            @include styleclass('flex-order-1');
                             color:$sidemenuText !important;
                         }
-                        
+                        .p-menuitem-text{
+                            @include styleclass('flex flex-grow-1');
+                            color:$sidemenuText !important;
+                        }
+                        .p-menuitem-icon{
+                            @include styleclass('mr-2');
+                            color:$sidemenuText !important;
+                        }
+                    }
+    
+                }
+            }
+            .p-panelmenu-content{
+                background-color: $sidemenuBg;
+                @include styleclass('mt-2 p-0 border-none');
+                .p-submenu-list{
+                    .p-menuitem{
+                        @include styleclass('mb-2');
+                        .p-menuitem-link{
+                            @include styleclass('px-9 border-round-md shadow-none');
+                            &:hover{
+                                background: $sidemenuitemLinkActive !important;
+                            }
+                            .p-menuitem-text{
+                                color:$sidemenuText !important;
+                            }
+                            
+                        }
                     }
                 }
             }
         }
     }
 }
+
+
+
+    .sideMenu{
+        background-color: $sidemenuBg;
+        @include styleclass('h-screen border-right-1 surface-border hidden md:block md:w-5rem lg:w-15rem xl:w-16rem flex-shrink-0 sticky top-0');
+        .sidemenu-brand{
+            @include styleclass('w-full h-4rem px-4 flex align-items-center justify-content-center lg:justify-content-start');
+            .brand-full{
+                @include styleclass('hidden lg:block');
+            }
+            .brand-compact{
+                @include styleclass('lg:hidden');
+            }
+        }
+        .p-panelmenu-panel {
+            @include styleclass('mb-3');
+            .p-panelmenu-header{
+                .p-panelmenu-header-link{
+                    background: $sidemenuBg !important;
+                    @include styleclass('border-none font-medium flex shadow-none border-round-md p-3 justify-content-center lg:justify-content-start');
+                    .p-panelmenu-icon{
+                        @include styleclass('flex-order-1');
+                        color:$sidemenuTextSecondary !important;
+                    }
+                    .p-menuitem-text{
+                        @include styleclass('hidden lg:flex flex-grow-1');
+                        color:$sidemenuTextSecondary !important;
+                    }
+                    .p-menuitem-icon{
+                        @include styleclass('mr-0 lg:mr-2');
+                        color:$sidemenuTextSecondary !important;
+                    }
+                    &.p-menuitem-link-active{
+                        background: $sidemenuitemLinkActive !important;
+                        .p-panelmenu-icon{
+                            @include styleclass('flex-order-1');
+                            color:$sidemenuText !important;
+                        }
+                        .p-menuitem-text{
+                            @include styleclass('hidden lg:flex flex-grow-1');
+                            color:$sidemenuText !important;
+                        }
+                        .p-menuitem-icon{
+                            @include styleclass('mr-0 lg:mr-2');
+                            color:$sidemenuText !important;
+                        }
+                    }
+    
+                }
+            }
+            .p-panelmenu-content{
+                background-color: $sidemenuBg;
+                @include styleclass('mt-2 p-0 border-none');
+                .p-submenu-list{
+                    .p-menuitem{
+                        @include styleclass('mb-2');
+                        .p-menuitem-link{
+                            @include styleclass('px-9 border-round-md shadow-none');
+                            &:hover{
+                                background: $sidemenuitemLinkActive !important;
+                            }
+                            .p-menuitem-text{
+                                color:$sidemenuText !important;
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }

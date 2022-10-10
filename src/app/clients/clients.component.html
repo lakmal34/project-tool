@@ -7,9 +7,9 @@
   
       <app-topnav></app-topnav>
       <div class="secondary-bar bg-white border-none border-bottom-1 border-solid border-200 px-4 flex align-items-center justify-content-between">
-        <div class="flex align-items-center gap-1">
-          <p-dropdown [options]="clients"  optionLabel="name" optionValue="code" class="send-methods mr-6 hidden md:flex" dataKey="code" styleClass="text-sm siteSwitcherDropdown"></p-dropdown>
-          <p-dropdown [options]="progress" optionLabel="name" optionValue="code" class="send-methods mr-6 hidden md:flex" dataKey="code" styleClass="text-sm siteSwitcherDropdown"></p-dropdown>
+        <div class="flex align-items-center gap-3">
+          <p-dropdown [options]="clients"  optionLabel="name" optionValue="code" dataKey="code" styleClass="text-sm siteSwitcherDropdown"></p-dropdown>
+          <p-dropdown [options]="progress" optionLabel="name" optionValue="code" dataKey="code" styleClass="text-sm siteSwitcherDropdown"></p-dropdown>
         </div>
         <div class="flex align-items-center gap-2 py-2">
           <button pButton icon="pi pi-plus-circle" type="button" label="New Client" class="p-button-text p-button-sm" styleClass="p-button-sm" (click)="visibleSidebar2 = true"></button>

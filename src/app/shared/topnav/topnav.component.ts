@@ -14,6 +14,7 @@ export class TopnavComponent implements OnInit {
   
   menuItems: MenuItem[];
   home: MenuItem;
+  visibleSidebar2
  
   constructor(private router: ActivatedRoute) {
   }
